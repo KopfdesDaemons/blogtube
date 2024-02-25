@@ -1,0 +1,11 @@
+#blogtube_footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 240px;
+    
+    a {
+        color: #aaa;
+    }
+}

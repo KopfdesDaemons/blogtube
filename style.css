@@ -1,0 +1,616 @@
+/*
+Theme Name: Blogtube
+Author: Rico
+Author URI: https://ricoswebsite.com/
+Text Domain: blogtube
+Description: Blogtube is a modern theme for blogs. A core feature is swapping layouts. The primary color is customizable. It has a tidy, wide layout with a sidebar, which is right at the edge and doesn't get in the way. The author page is particularly extensive. There is a landing page with a widget area.
+Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Version: 1.0.4
+Requires at least: 5.0
+Requires PHP: 7.0
+Tested up to: 6.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+@font-face {
+  font-display: swap;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/quicksand-v29-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/quicksand-v29-latin-regular.woff") format("woff");
+}
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/roboto-v30-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/roboto-v30-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/open-sans-v35-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/open-sans-v35-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-jp-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/noto-sans-jp-v52-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/noto-sans-jp-v52-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/montserrat-v25-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/montserrat-v25-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* lato-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/lato-v24-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/lato-v24-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/googlefonts/poppins-v20-latin-regular.woff2") format("woff2"), url("fonts/googlefonts/poppins-v20-latin-regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+@font-face {
+  font-family: "Font Awesome Regular";
+  src: url("fonts/fontawesome/webfonts/fa-regular-400.woff2") format("woff2"), url("fonts/fontawesome/webfonts/fa-regular-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font Awesome Brands";
+  src: url("fonts/fontawesome/webfonts/fa-brands-400.woff2") format("woff2"), url("fonts/fontawesome/webfonts/fa-brands-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font Awesome Solid";
+  src: url("fonts/fontawesome/webfonts/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/webfonts/fa-solid-900.ttf") format("truetype");
+}
+#blogtube_footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 240px;
+}
+#blogtube_footer a {
+  color: #aaa;
+}
+
+#blogtube_header {
+  grid-area: header;
+  position: fixed;
+  display: flex;
+  align-items: stretch;
+  height: 4em;
+  background-color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 50;
+}
+
+#blogtube_searchform {
+  margin: 0.5em auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+  max-width: 640px;
+}
+@media only screen and (min-width: 1000px) {
+  #blogtube_searchform {
+    padding-left: 240px;
+  }
+}
+
+#blogtube_searchinput {
+  border: 1px solid #303030;
+  border-radius: 40px 0 0 40px;
+  background-color: #121212;
+  box-shadow: 0 0 0px 1000px #121212 inset;
+  padding: 0.5em;
+  padding-left: 1em;
+  font-size: 1.2em;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+#blogtube_searchinput:focus {
+  outline: none;
+  border-color: blue;
+}
+
+#blogtube_search_submit {
+  font-family: "Font Awesome Solid";
+  background-color: #222222;
+  border: none;
+  height: 100%;
+  border-radius: 0 40px 40px 0;
+  color: var(--blogtube_font_color);
+  width: 64px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+#blogtube_sidemenu_toggle {
+  color: var(--blogtube_font_color);
+  font-size: 1.8em;
+  border-radius: 5em;
+  cursor: pointer;
+  margin: auto 0.5em;
+  padding: 0.3em;
+}
+#blogtube_sidemenu_toggle:hover {
+  background-color: #272727;
+}
+#blogtube_sidemenu_toggle i {
+  display: flex;
+  justify-content: center;
+}
+
+.blogtube_header_logo {
+  height: 100%;
+  display: flex;
+  flex: 0 0 auto;
+}
+.blogtube_header_logo img {
+  max-height: 100%;
+  padding: 0.4em;
+  box-sizing: border-box;
+  height: 100%;
+  width: auto;
+}
+
+#blogtube_sidemenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 4em 1em 0 1em;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  width: 0;
+  background-color: inherit;
+  width: 240px;
+  transform: translateX(-240px);
+  transition: transform 200ms;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 600px) {
+  #blogtube_sidemenu {
+    transform: translateX(0);
+  }
+}
+#blogtube_sidemenu.blogtube_sidemenu_open {
+  transform: translateX(0);
+}
+@media only screen and (min-width: 600px) {
+  #blogtube_sidemenu.blogtube_sidemenu_open {
+    transform: translateX(-240px);
+  }
+}
+#blogtube_sidemenu:hover {
+  scrollbar-color: #717171 transparent;
+}
+#blogtube_sidemenu .menu-item {
+  display: flex;
+  flex-direction: column;
+}
+#blogtube_sidemenu .menu-item .blogtube_menuitem_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2em;
+}
+#blogtube_sidemenu .menu-item .blogtube_menuitem_container i {
+  padding: 1em;
+  cursor: pointer;
+}
+#blogtube_sidemenu .menu-item .blogtube_menuitem_container i:hover {
+  background-color: #272727;
+}
+#blogtube_sidemenu .menu-item .blogtube_menuitem_container a {
+  border-radius: 10px;
+  padding: 1em;
+  flex: 1 1 auto;
+  text-decoration: none;
+  position: relative;
+}
+#blogtube_sidemenu .menu-item .blogtube_menuitem_container a:hover {
+  background-color: #272727;
+}
+#blogtube_sidemenu .menu-item .sub-menu {
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  border-left: 1px solid #3f3f3f;
+  padding-left: 0.5em;
+}
+#blogtube_sidemenu .menu-item.blogtube_submenu_open > .blogtube_menuitem_container .blogtube_submenu_toggle {
+  transform: rotate(180deg);
+  background-color: #272727;
+}
+#blogtube_sidemenu .menu-item.blogtube_submenu_open > .sub-menu {
+  max-height: 100em;
+  overflow-y: auto;
+  visibility: visible;
+}
+#blogtube_sidemenu ul {
+  padding: 0;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+  scrollbar-width: thin;
+}
+#blogtube_sidemenu ul li {
+  list-style: none;
+}
+#blogtube_sidemenu nav {
+  border-bottom: 1px solid #3f3f3f;
+}
+#blogtube_sidemenu .blogtube_sidebar_mainmenu li {
+  display: flex;
+}
+#blogtube_sidemenu .blogtube_sidebar_mainmenu a {
+  padding: 1em;
+  flex: 1 0 auto;
+  border-radius: 10px;
+  display: flex;
+  gap: 1em;
+  text-decoration: none;
+}
+#blogtube_sidemenu .blogtube_sidebar_mainmenu a:hover {
+  background-color: #272727;
+}
+#blogtube_sidemenu .blogtube_sidebar_lagal_links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.5em;
+}
+#blogtube_sidemenu .blogtube_sidebar_lagal_links li {
+  display: inline;
+}
+#blogtube_sidemenu .blogtube_sidebar_lagal_links li a {
+  text-decoration: none;
+}
+#blogtube_sidemenu .blogtube_sidebar_lagal_links + .blogtube_theme_info {
+  margin-top: 1em;
+}
+#blogtube_sidemenu .blogtube_theme_info {
+  margin-top: auto;
+}
+#blogtube_sidemenu .blogtube_theme_info a, #blogtube_sidemenu .blogtube_theme_info span, #blogtube_sidemenu .blogtube_theme_info div {
+  color: #717171;
+}
+
+html {
+  scrollbar-color: hsl(0, 0%, 67%) transparent;
+}
+
+body {
+  margin: 0;
+  background-color: #0f0f0f;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: minmax(0, 1fr) auto;
+  position: relative;
+  grid-template-areas: "header header" "landingpagesection landingpagesection" "main sidebar" "footer footer";
+}
+@media only screen and (max-width: 800px) {
+  body {
+    grid-template-areas: "header" "landingpagesection" "main" "sidebar" "footer";
+  }
+}
+
+.blogtube_skip_link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: var(--blogtube_background_color);
+  color: #fff;
+  padding: 1em;
+  border: 1px solid var(--blogtube_primary_color);
+  z-index: 999;
+}
+
+.blogtube_skip_link:focus {
+  top: 0;
+}
+
+main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: main;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+@media only screen and (min-width: 600px) {
+  main {
+    margin-left: 240px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  margin: 0.2em 0;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+table,
+label,
+div,
+button {
+  color: var(--blogtube_font_color);
+}
+
+a {
+  color: var(--blogtube_primary_color);
+}
+a:visited {
+  color: var(--blogtube_primary_variant_darker);
+}
+a:hover {
+  color: var(--blogtube_primary_variant_brighter);
+}
+
+.home main .blogtube_content_spacer {
+  max-width: unset;
+  width: unset;
+  align-items: unset;
+}
+
+.blogtube_content_spacer {
+  max-width: 70em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.blogtube_content {
+  width: 95%;
+}
+
+.blogtube_user_content_container {
+  min-height: 60vh;
+  margin: 2em 0;
+  padding: 0 clamp(1em, 2vw, 5em);
+  overflow: hidden;
+  background-color: var(--blogtube_background_color_posts);
+}
+.blogtube_user_content_container .wp-block-columns {
+  margin: 1em 0 0 0;
+}
+.blogtube_user_content_container .wp-block-columns p {
+  margin: 0;
+}
+.blogtube_user_content_container li {
+  margin: 3px;
+}
+.blogtube_user_content_container .wp-caption {
+  font-size: 0.8em;
+  font-style: italic;
+}
+.blogtube_user_content_container figure {
+  margin: 0;
+}
+.blogtube_user_content_container img {
+  margin: 0.6em 0;
+}
+.blogtube_user_content_container .alignleft {
+  float: left;
+  margin: 0 1.5em 1em 0;
+}
+.blogtube_user_content_container .alignright {
+  float: right;
+  margin: 0 0 1em 1.5em;
+}
+.blogtube_user_content_container .aligncenter {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+select {
+  padding: 0.5em;
+}
+
+pre {
+  overflow-y: auto;
+  margin: 0;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: rgb(47, 45, 59);
+  padding: 1em;
+  color: rgb(240, 240, 240);
+  display: block;
+  margin: 1em 5%;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+dt {
+  color: var(--blogtube_primary_color);
+  margin: 0.5em 0;
+  font-weight: bold;
+}
+
+dd {
+  font-style: italic;
+}
+
+hr {
+  width: 70%;
+}
+
+.widget {
+  margin-bottom: 1em;
+  padding: 1em;
+}
+.widget p {
+  overflow-wrap: anywhere;
+}
+
+input:not([type=submit], [type=checkbox]),
+textarea,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: none;
+  background-color: black;
+  box-shadow: 0 0 0px 1000px black inset;
+  color: var(--blogtube_font_color);
+  -webkit-text-fill-color: var(--blogtube_font_color);
+}
+
+.gallery {
+  display: grid;
+}
+.gallery .gallery-item {
+  font-size: 0.8em;
+  overflow: hidden;
+}
+.gallery .gallery-item img {
+  border-radius: 8px;
+  border: none !important;
+}
+.gallery .gallery-item img:hover {
+  transform: scale(0.95);
+  transition: all 300ms;
+}
+.gallery .landscape img {
+  width: 95%;
+  height: auto;
+}
+
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.attachment img {
+  width: 95%;
+  height: auto;
+}
+
+.blogtube_post_card {
+  max-width: 50em;
+  margin: 0 1em;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5em 0;
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  gap: 1em;
+}
+.blogtube_post_card p, .blogtube_post_card span, .blogtube_post_card div {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.blogtube_post_card a {
+  text-decoration: none;
+}
+.blogtube_post_card a h2 {
+  font-weight: 400;
+  margin-top: 0;
+  max-height: 2lh;
+  overflow: hidden;
+}
+.blogtube_post_card p {
+  max-height: 2lh;
+  overflow: hidden;
+}
+.blogtube_post_card .blogtube_post_card_image_container {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 auto;
+}
+.blogtube_post_card .blogtube_post_card_image_container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  width: 246px;
+  height: 138px;
+  max-width: unset;
+}
+.blogtube_post_card .blogtube_post_card_content_div {
+  max-width: 100%;
+  flex: 1 0 55%;
+}/*# sourceMappingURL=style.css.map */
