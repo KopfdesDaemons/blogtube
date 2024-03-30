@@ -3,7 +3,7 @@
     position: fixed;
     display: flex;
     align-items: stretch;
-    height: 4em;
+    height: 56px;
     background-color: inherit;
     width: 100%;
     box-sizing: border-box;
@@ -30,13 +30,13 @@
     box-shadow: 0 0 0px 1000px #121212 inset;
     padding: 0.5em;
     padding-left: 1em;
-    font-size: 1.2em;
+    font-size: 16px;
     min-width: 0;
     flex: 1 1 auto;
 
     &:focus {
         outline: none;
-        border-color: blue;
+        border-color: #1c62b9;
     }
 }
 
@@ -49,24 +49,25 @@
     color: var(--blogtube_font_color);
     width: 64px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.8rem;
+    font-weight: 400;
 }
 
 #blogtube_sidemenu_toggle {
     color: var(--blogtube_font_color);
-    font-size: 1.8em;
-    border-radius: 5em;
+    font-size: 2.3em;
+    border-radius: 10em;
     cursor: pointer;
     margin: auto 0.5em;
-    padding: 0.3em;
+    // padding: 0.2em;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     &:hover {
-        background-color: #272727;
-    }
-    
-    i {
-        display: flex;
-        justify-content: center;
+        background-color: #ffffff33;
     }
 }
 
