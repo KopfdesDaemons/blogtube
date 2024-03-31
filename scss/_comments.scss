@@ -61,6 +61,7 @@
             textarea {
                 resize: vertical;
                 max-width: 90vw;
+                height: 70px;
             }
         }
 
@@ -69,6 +70,11 @@
         .comment-form-url {
             display: flex;
             flex-direction: column;
+        }
+
+        .form-submit {
+            display: flex;
+            justify-content: flex-end;
         }
     }
 
@@ -84,12 +90,16 @@
         gap: 0.5em;
         margin-top: 0.5em;
         padding: 0 3%;
+        line-height: 0;
+        overflow: hidden;
+        color: transparent;
 
         small {
             margin-left: auto;
 
             a {
                 color: rgb(172, 0, 0);
+                line-height: 1;
             }
         }
     }
@@ -196,14 +206,15 @@
             font-family: Roboto, sans-serif;
             height: 36px;
             font-size: 14px;
-            background-color: var(--blogtube_primary_variant_darker);
+            background-color: #ffffff1a;
             text-decoration: none;
             color: var(--blogtube_font_color);
             border: none;
             cursor: pointer;
     
             &:hover {
-                background-color: var(--blogtube_primary_color);
+                background-color: #3ea6ff;
+                color: black;
             }
         }
     }

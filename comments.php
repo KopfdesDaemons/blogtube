@@ -5,19 +5,26 @@ if (post_password_required()) {
 ?>
 
 <div id="comments" class="blogtube_comments_layout_portal">
+    <h2>
+        <?php
+        $blogtube_comments_number = get_comments_number();
+        if ($blogtube_comments_number === 1) {
+            printf(__('One Comment', 'blogtube'));
+        } else {
+            printf(__('%d Comments', 'blogtube'), $blogtube_comments_number);
+        }
+        ?>
+    </h2>
+
+            <?php
+            comment_form(array(
+                'title_reply_before' => '<h2 class="blogtube_comment_reply_title">',
+                'title_reply_after'  => '</h2>',
+            ));
+            ?>
 
     <?php if (have_comments()) : ?>
 
-        <h2>
-            <?php
-            $blogtube_comments_number = get_comments_number();
-            if ($blogtube_comments_number === 1) {
-                printf(__('One Comment', 'blogtube'));
-            } else {
-                printf(__('%d Comments', 'blogtube'), $blogtube_comments_number);
-            }
-            ?>
-        </h2>
 
         <ul class="blogtube_comment_list <?php if (!get_theme_mod('comments_image', true)) echo 'blogtube_comments_without_image'; ?>">
             <?php
@@ -42,11 +49,5 @@ if (post_password_required()) {
         <p><?php _e('Comments are closed.', 'blogtube'); ?></p>
     <?php endif; ?>
 
-    <?php
-    comment_form(array(
-        'title_reply_before' => '<h2 class="blogtube_comment_reply_title">',
-        'title_reply_after'  => '</h2>',
-    ));
-    ?>
 
 </div>

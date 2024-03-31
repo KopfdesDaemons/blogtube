@@ -30,14 +30,6 @@
         
     }
 
-    &.blogtube_sidemenu_open {
-        transform: translateX(0);
-
-        @media only screen and (min-width: 600px) {
-            transform: translateX(-260px);
-        }
-    }
-
     &:hover {
         scrollbar-color: #717171 transparent;
     }
@@ -162,6 +154,14 @@
         a, span, div {
             color: #717171;
         }
+    }
+}
+
+.blogtube_sidemenu_open #blogtube_sidemenu {
+    transform: translateX(0);
+
+    @media only screen and (min-width: 600px) {
+        transform: translateX(-260px);
     }
 }
 

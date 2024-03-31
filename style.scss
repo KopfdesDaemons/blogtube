@@ -59,23 +59,23 @@ body {
 main {
     min-height: 90vh;
     display: flex;
+    flex: 1 1 60%;
     flex-direction: column;
     align-items: center;
-    grid-area: main;
     margin-top: 6em;
     margin-bottom: 2em;
-
-    
-    @media only screen and (min-width: 600px) {
-        margin-left: 240px;
-    }
 }
 
-#blogtube_sidemenu.blogtube_sidemenu_open + main {
-    @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
+    body {
+        margin-left: 240px;
+    }
+
+    .blogtube_sidemenu_open {
         margin-left: 0;
     }
 }
+
 
 h1,
 h2,
@@ -140,7 +140,7 @@ a {
     padding: 0 clamp(0.5rem, 2vw, 1rem);
     overflow: hidden;
     font-size: 1.4rem;
-    width: 100%;
+    flex-grow: 1;
 
     background-color: var(--blogtube_background_color_posts);
 

@@ -1,5 +1,4 @@
 #blogtube_header {
-    grid-area: header;
     position: fixed;
     display: flex;
     align-items: stretch;
@@ -9,6 +8,7 @@
     box-sizing: border-box;
     z-index: 50;
     top: 0;
+    left: 0;
     padding-right: 1em;
 }
 

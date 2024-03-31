@@ -39,12 +39,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Toggle sidemenu
     const sidemenuToggle = this.document.querySelector('#blogtube_sidemenu_toggle');
-    const sidemenu = this.document.querySelector('#blogtube_sidemenu');
+    const body = this.document.querySelector('body');
     sidemenuToggle.addEventListener('click', toogleSidemenu);
     sidemenuToggle.addEventListener('keydown', toogleSidemenu)
 
     function toogleSidemenu() {
-        sidemenu.classList.toggle('blogtube_sidemenu_open');
+        body.classList.toggle('blogtube_sidemenu_open');
     }
 
 }, false);
