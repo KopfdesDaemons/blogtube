@@ -1,4 +1,4 @@
-<footer id="blogtube_footer">
+<!-- <footer id="blogtube_footer">
     <div class="blogtube_footer_info">
         <div>
             <a href="https://wordpress.org/themes/blogtube/" target="_blank">Blogtube WordPress Theme</a>
@@ -10,7 +10,7 @@
             ?>
         </div>
     </div>
-</footer>
+</footer> -->
 <?php wp_footer(); ?>
 </body>
 

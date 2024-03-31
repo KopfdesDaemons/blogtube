@@ -1,0 +1,39 @@
+@mixin color_button {
+    padding: 0.8em;
+    border-radius: 6px;
+    border: 1px solid var(--blog_layouts_primary_color);
+    background-color: black;
+    text-decoration: none;
+    color:  var(--blog_layouts_primary_color);
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(41, 41, 41);
+    }
+}
+
+@mixin button {
+    border-radius: 4px;
+    padding: 0.8em 1.2em;
+    background-color: black;
+    border: solid 1px gray;
+    white-space: nowrap;
+    user-select: none;
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(41, 41, 41);
+    }
+}
+
+@mixin pagination_page_number {
+    border-radius: 4px;
+    padding: 0.8em 1.2em;
+    background: black;
+    border: solid 1px gray;
+    white-space: nowrap;
+    user-select: none;
+}

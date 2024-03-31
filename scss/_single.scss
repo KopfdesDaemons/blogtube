@@ -1,0 +1,178 @@
+.single {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding-top: 8em;
+
+    main {
+        margin-top: 0;
+        padding-left: clamp(0em, 2vw, 1.2em);
+        max-width: 100em;
+    }
+
+
+    .blogtube_hero {
+        width: 100%;
+        
+        img {
+            aspect-ratio: 16/9;
+            height: auto;
+            border-radius: 12px;
+            max-height: 703px;
+            // box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 2.8rem;
+            white-space: normal;
+            margin-top: 12px;
+        }
+
+        .blogtube_hero_author_row {
+            border-bottom: 1px solid #ffffff33;
+            display: flex;
+            gap: 0.5em;
+            align-items: start;
+            font-size: 1.6rem;
+            font-weight: 800;
+            padding-bottom: 0.3em;
+
+            a {
+                text-decoration: none;
+            }
+
+            img {
+                height: 40px;
+                width: 40px;
+                border-radius: 5em;
+            }
+        }
+
+        .blogtube_metadata_box {
+            background-color: #ffffff1a;
+            margin: 12px 12px 0 0;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1.4rem;
+
+            .blogtube_date {
+                font-weight: 800;
+            }
+
+            .blogtube_categorie_list {
+                ul {
+                    padding: 0;
+                    margin: 0.2em 0;
+
+                    li {
+                        list-style: none;
+
+                        a {
+                            text-decoration: none;
+                            color: #3ea6ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .blogtube_post_footer {
+        width: 100%;
+    }
+
+    .blogtube_authorbox {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2em 0 3em 0;
+        border-radius: 0.3em;
+        background-color: #212121;
+        border-radius: 16px;
+        font-size: 1.2rem;
+    
+        .blogtube_author_avatar {
+            flex: 1 0 auto;
+            display: flex;
+            margin: 0 auto;
+    
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 200px;
+                    object-fit: cover;
+                    border-radius: 16px;
+                }
+            }
+        }
+    
+        .blogtube_author_details {
+            flex: 100 0 60%;
+            padding: 3%;
+    
+            .blogtube_author_name_row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                h3 a {
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    color: var(--blogtube_font_color);
+                }
+    
+                h3 + a{
+                    padding: 0.5em;
+                    width: 1em;
+                    height: 1em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    color: var(--blogtube_font_color);
+    
+                    &:hover {
+                        border-radius: 5em;
+                        background-color: var(--blogtube_primary_color);
+                    }
+                }
+            }
+    
+            p {
+                filter: brightness(0.9);
+            }
+        }
+    
+        &:hover {
+            background-color: #292929;
+        }
+    }
+
+    .blogtube_post_pagination {
+        font-size: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.2em;
+    
+        a {
+            font-size: clamp(0.8em, 2vw, 1em);
+        }
+    
+        .blogtube_post_pagination_prev {
+            margin-right: auto;
+        }
+    
+        .blogtube_post_pagination_next {
+            margin-left: auto;
+        }
+
+    }
+}

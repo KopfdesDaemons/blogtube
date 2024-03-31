@@ -41,12 +41,14 @@ function blogtube_enqueue_scripts()
     wp_enqueue_script('blogtube_sidemenu_script', get_template_directory_uri() . '/js/blogtube_sidemenu.js', null, '1.0', true);
 
     // Infinitiyscroll Script
-    wp_enqueue_script('blogtube_infinityscroll_script', get_template_directory_uri() . '/js/blogtube_infinityscroll.js', null, '1.0', true);
-
-    // Pass the Ajax URL to script.js
-    wp_localize_script('blogtube_infinityscroll_script', 'my_scripts_vars', array(
-        'ajaxurl' => admin_url('admin-ajax.php')
-    ));
+    if(is_home()){
+        wp_enqueue_script('blogtube_infinityscroll_script', get_template_directory_uri() . '/js/blogtube_infinityscroll.js', null, '1.0', true);
+       
+        // Pass the Ajax URL to script.js
+        wp_localize_script('blogtube_infinityscroll_script', 'my_scripts_vars', array(
+            'ajaxurl' => admin_url('admin-ajax.php')
+        ));
+    }
 }
 add_action('wp_enqueue_scripts', 'blogtube_enqueue_scripts');
 

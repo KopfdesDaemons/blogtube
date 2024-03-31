@@ -4,7 +4,7 @@ if (post_password_required()) {
 }
 ?>
 
-<div id="comments" <?php echo 'class="' . 'blogtube_comments_layout_' . str_replace("-", "_", esc_attr(get_theme_mod('comments_layout', 'dark-cards'))) . '"'; ?>>
+<div id="comments" class="blogtube_comments_layout_portal">
 
     <?php if (have_comments()) : ?>
 

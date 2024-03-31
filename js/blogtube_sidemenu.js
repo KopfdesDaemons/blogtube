@@ -35,15 +35,16 @@ window.addEventListener("DOMContentLoaded", function () {
         listItem.classList.toggle('blogtube_submenu_open');
     }
 
+
+
+    // Toggle sidemenu
     const sidemenuToggle = this.document.querySelector('#blogtube_sidemenu_toggle');
     const sidemenu = this.document.querySelector('#blogtube_sidemenu');
     sidemenuToggle.addEventListener('click', toogleSidemenu);
     sidemenuToggle.addEventListener('keydown', toogleSidemenu)
 
-    let sidemenuIsOpen = false
     function toogleSidemenu() {
         sidemenu.classList.toggle('blogtube_sidemenu_open');
-        sidemenu = !sidemenu;
     }
 
 }, false);

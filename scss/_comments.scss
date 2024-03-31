@@ -1,0 +1,210 @@
+#comments {    
+    input:not([type="submit"], [type="checkbox"]), textarea {
+        border-radius: 4px 4px 0 0;
+        border-bottom: 1px solid var(--blogtube_primary_variant_darker);
+        padding: 1em 0.5em;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--blogtube_primary_color);
+        }
+
+        &:hover {
+            background-color: #141414;
+            box-shadow: 0 0 0px 1000px #141414 inset;
+        }
+    }
+
+    .says {
+        display: none;
+    }
+
+    .vcard {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        font-size: 1.3em;
+
+        .url {
+            text-decoration: none;
+        }
+    }
+
+    .blogtube_comment_list {
+        padding-left: 0;
+    }
+
+    a {
+        color: rgb(177, 177, 177);
+    }
+
+    .comment, .children, .pingback  {
+        list-style: none;
+        padding: 1% 2%;
+
+        li {
+            border-radius: 4px;
+
+            ol {
+                padding-left: 0.5em;
+            }
+        }
+    }
+
+    .comment-form {
+        padding: 0 3%;
+
+        .comment-form-comment {
+            display: flex;
+            flex-direction: column;
+
+            textarea {
+                resize: vertical;
+                max-width: 90vw;
+            }
+        }
+
+        .comment-form-author,
+        .comment-form-email,
+        .comment-form-url {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .comment-metadata {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8em 1em 0.3em 1em;
+    }
+
+    .blogtube_comment_reply_title {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: 0.5em;
+        padding: 0 3%;
+
+        small {
+            margin-left: auto;
+
+            a {
+                color: rgb(172, 0, 0);
+            }
+        }
+    }
+
+    .comment-content {
+        padding: 1em;
+        margin: 0.5em;
+        border-radius: 4px;
+        overflow-wrap: break-word;
+        max-height: 40em;
+        overflow-y: auto;
+
+        > p {
+            margin: 0;
+        }
+    }
+
+    &.blogtube_comments_layout_portal {
+        margin: 3em 0 10em 0;
+        font-size: 1.4em;
+    
+        .comment-body {    
+            &:hover {
+                filter: brightness(1.1);
+            }
+        }
+
+        .comment-meta, .vcard {
+            display: contents;
+        }
+
+
+        .comment-metadata {
+            padding-left: 0;
+            display: contents;
+
+            a {
+                text-decoration: none;
+            }
+            span {
+                float: right;
+            }
+        }
+
+        .url {
+            font-size: 1em;
+        }
+
+        .url:before {
+            content: '@';
+        }
+
+        .avatar {
+            border-radius: 5em;
+            float: left;
+            margin-right: 0.5em;
+        }
+    
+        .bypostauthor {
+            .url {
+                background-color: #888888;
+                border-radius: 12px;
+                height: 0 6px;
+                padding: 0.2em;
+                color: black;
+    
+                &:after {
+                    content: ' \f4ff';
+                    font-family: 'Font Awesome Solid';
+                }
+            }
+        }
+
+        .comment-content {
+            margin: 0;
+            padding-left: 0;
+        }
+    
+        .reply {
+            margin-left: 3em;
+            display: flex;
+    
+            a {
+                border-radius: 5em;
+                font-family: Roboto, sans-serif;
+                height: 36px;
+                font-size: 12px;
+                display: flex;
+                padding: 0 1em;
+                align-items: center;
+                text-decoration: none;
+                color: var(--blogtube_font_color);
+    
+                &:hover {
+                    background-color: rgba(255,255,255,0.2);
+                    border-color: transparent;
+                }
+            }
+        }
+    
+        #submit {
+            border-radius: 5em;
+            padding: 0 1em;
+            font-family: Roboto, sans-serif;
+            height: 36px;
+            font-size: 14px;
+            background-color: var(--blogtube_primary_variant_darker);
+            text-decoration: none;
+            color: var(--blogtube_font_color);
+            border: none;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: var(--blogtube_primary_color);
+            }
+        }
+    }
+}

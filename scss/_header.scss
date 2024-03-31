@@ -8,6 +8,12 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 50;
+    top: 0;
+    padding-right: 1em;
+}
+
+body.admin-bar #blogtube_header{
+    margin-top: 32px;
 }
 
 #blogtube_searchform {

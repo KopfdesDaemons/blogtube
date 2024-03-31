@@ -1,5 +1,5 @@
 <style>
     :root {
-        --blogtube_font_color: #fff;
+        --blogtube_font_color: #F1F1F1;
     }
 </style>
