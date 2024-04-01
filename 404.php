@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php include_once get_template_directory() . '/template-parts/sidemenu.php'; ?>
 <main role="main">
     <section class="blogtube_content_spacer">
         <div class="blogtube_error" id="blogtube_main_content">

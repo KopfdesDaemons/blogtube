@@ -137,9 +137,5 @@
             </div>
         </section>
 </main>
-<?php if (get_theme_mod('post_sidebar', true)) {
-    echo '<aside id="blogtube_sidebar" class="' . 'blogtube_sidebar_layout_' . esc_attr(get_theme_mod('posts_sidebar_layout', 'social')) . '">';
-    get_sidebar();
-    echo '</aside>';
-}; ?>
+<aside id="blogtube_sidebar"><?php get_sidebar(); ?></aside>
 <?php get_footer(); ?>

@@ -15,14 +15,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 @use 'scss/fonts.scss' as *;
 @use 'scss/mixins' as *;
-// @use 'scss/404' as *;
+@use 'scss/404' as *;
 // @use 'scss/animations' as *;
 // @use 'scss/archive' as *;
 @use 'scss/comments' as *;
 @use 'scss/footer' as *;
 @use 'scss/header' as *;
 @use 'scss/sidemenu' as *;
-// @use 'scss/page' as *;
+@use 'scss/page' as *;
 // @use 'scss/pagination' as *;
 @use 'scss/search' as *;
 @use 'scss/single' as *;

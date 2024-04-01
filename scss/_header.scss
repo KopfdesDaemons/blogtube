@@ -24,8 +24,21 @@ body.admin-bar #blogtube_header{
     flex: 1 1 auto;
     max-width: 640px;
     
-    @media only screen and (min-width: 1000px) {
-        padding-left: 240px;
+}
+
+@media only screen and (min-width: 600px) {
+    #blogtube_searchform {
+        padding-left: 240px;    
+    }
+
+    .blogtube_sidemenu_open #blogtube_searchform {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #blogtube_searchform {
+        padding-left: 0;
     }
 }
 

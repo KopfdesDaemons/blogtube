@@ -80,6 +80,26 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-family: "Font Awesome Solid";
   src: url("fonts/fontawesome/webfonts/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/webfonts/fa-solid-900.ttf") format("truetype");
 }
+.error404 .blogtube_error {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #142130;
+  border-radius: 12px;
+  padding: 1em;
+  margin: 4em 0.5em;
+}
+.error404 .blogtube_error .blogtube_404_headline_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.error404 .blogtube_error .blogtube_404_headline_row .fa-solid {
+  font-size: 5rem;
+}
+
 #comments input:not([type=submit], [type=checkbox]), #comments textarea {
   border-radius: 4px 4px 0 0;
   padding: 1em 0.5em;
@@ -293,12 +313,20 @@ body.admin-bar #blogtube_header {
   flex: 1 1 auto;
   max-width: 640px;
 }
-@media only screen and (min-width: 1000px) {
+
+@media only screen and (min-width: 600px) {
   #blogtube_searchform {
     padding-left: 240px;
   }
+  .blogtube_sidemenu_open #blogtube_searchform {
+    padding-left: 0;
+  }
 }
-
+@media only screen and (max-width: 800px) {
+  #blogtube_searchform {
+    padding-left: 0;
+  }
+}
 #blogtube_searchinput {
   border: 1px solid #303030;
   border-radius: 40px 0 0 40px;
@@ -498,6 +526,19 @@ body.admin-bar #blogtube_sidemenu {
 }
 body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   height: calc(100dvh - 32px);
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding-top: 8em;
+}
+.page main {
+  margin-top: 0;
+  padding-left: clamp(0em, 2vw, 1.2em);
+  max-width: 100em;
 }
 
 .search .blogtube_content_spacer {

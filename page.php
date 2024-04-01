@@ -1,12 +1,7 @@
-<?php
-get_header();
-?>
-<section class="blogtube_hero">
-    <header>
+<?php get_header(); ?>
+<?php include_once get_template_directory() . '/template-parts/sidemenu.php'; ?>
+    <main <?php if (get_theme_mod('pages_sidebar', true)) echo 'class="blogtube_has_sidebar"' ?>>
         <h1 class="title"><?php the_title(); ?></h1>
-    </header>
-</section>
-<main <?php if (get_theme_mod('pages_sidebar', true)) echo 'class="blogtube_has_sidebar"' ?>>
     <section class="blogtube_content_spacer">
         <div class="blogtube_content" id="blogtube_main_content">
             <?php
@@ -40,10 +35,5 @@ get_header();
         </div>
     </section>
 </main>
-<?php
-if(get_theme_mod('pages_sidebar', true)){
-    echo '<aside id="blogtube_sidebar" class="' . 'blogtube_sidebar_layout_' . esc_attr(get_theme_mod('pages_sidebar_layout', 'social')) . '">';
-    get_sidebar();
-    echo '</aside>';
-}
-get_footer();
+<aside id="blogtube_sidebar"><?php get_sidebar(); ?></aside>
+<?php get_footer(); ?>

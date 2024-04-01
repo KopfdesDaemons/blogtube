@@ -1,0 +1,24 @@
+.error404 {
+    
+    .blogtube_error {
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #142130;
+        border-radius: 12px;
+        padding: 1em;
+        margin: 4em 0.5em;
+
+        .blogtube_404_headline_row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+
+            .fa-solid {
+                font-size: 5rem;
+            }
+        }
+    }
+}
