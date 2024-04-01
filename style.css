@@ -861,9 +861,14 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   display: flex;
   color: black;
   cursor: pointer;
+  margin: 0.5em 0;
 }
 .wp-block-post-navigation-link:hover {
   background-color: rgb(41, 41, 41);
+}
+.wp-block-post-navigation-link a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
 }
 
 .wp-block-read-more {
@@ -877,6 +882,10 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .wp-block-read-more:hover {
   background-color: rgb(41, 41, 41);
+}
+.wp-block-read-more a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
 }
 
 .wp-block-navigation__responsive-container-content li {
@@ -1050,6 +1059,10 @@ blockquote {
 .wp-block-loginout a:hover, .wp-block-loginout input[type=submit]:hover {
   background-color: rgb(41, 41, 41);
 }
+.wp-block-loginout a a, .wp-block-loginout input[type=submit] a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
+}
 .wp-block-loginout .login-username,
 .wp-block-loginout .login-password {
   display: flex;
@@ -1193,6 +1206,10 @@ blockquote {
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt a:hover {
   background-color: rgb(41, 41, 41);
 }
+.wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt a a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
+}
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt:hover {
   background-color: rgb(66, 66, 66);
 }
@@ -1232,16 +1249,12 @@ blockquote {
 
 .wp-block-post-template li {
   max-width: 65em;
-  border: 2px solid var(--blogtube_primary_variant_darker);
   background-color: black;
   border-radius: 12px;
   margin-bottom: 3em;
   padding: 1em;
-  box-shadow: 0 0 20px 0px var(--blogtube_primary_variant_darker);
 }
 .wp-block-post-template li:hover {
-  transition: all 0.2s;
-  box-shadow: 0 0 40px 5px var(--blogtube_primary_color);
   outline: 2px solid var(--blogtube_primary_color);
 }
 
@@ -1275,6 +1288,11 @@ blockquote {
 .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt {
   overflow-wrap: anywhere;
   word-wrap: break-all;
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 #blogtube_sidebar {
@@ -1353,13 +1371,17 @@ h6 {
   word-wrap: break-word;
   overflow-wrap: anywhere;
   margin: 0.2em 0;
+  color: var(--blogtube_font_color);
 }
 
-h1,
-h2,
-h3,
 p,
 span,
+cite,
+pre,
+blockquote,
+figure,
+dd,
+address,
 table,
 label,
 div,

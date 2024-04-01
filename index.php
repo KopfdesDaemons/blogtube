@@ -1,6 +1,5 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
+<?php include_once get_template_directory() . '/template-parts/sidemenu.php'; ?>
 <section class="blogtube_hero">
     <header>
         <h1 class="title"><?php the_title(); ?></h1>
@@ -27,23 +26,14 @@ get_header();
                             'link_after'  => '</span>',
                         )
                     );
-                    ?>
 
-                    <!-- Comments -->
-                    <?php
-                    if (comments_open() || get_comments_number()) {
-                        comments_template();
-                    }
+                    // Comments
+                    if (comments_open() || get_comments_number()) comments_template();
                     ?>
                 </footer>
             <?php } ?>
         </div>
     </section>
 </main>
-<?php
-if(get_theme_mod('pages_sidebar', true)){
-    echo '<aside id="blogtube_sidebar" class="' . 'blogtube_sidebar_layout_' . esc_attr(get_theme_mod('pages_sidebar_layout', 'social')) . '">';
-    get_sidebar();
-    echo '</aside>';
-}
-get_footer();
+<aside id="blogtube_sidebar"><?php get_sidebar(); ?></aside>
+<?php get_footer(); ?>

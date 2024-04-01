@@ -10,6 +10,11 @@
     &:hover {
         background-color: rgb(41, 41, 41);
     }
+
+    a {
+        color: var(--blogtube_font_color);
+        text-decoration: none;
+    }
 }
 
 @mixin button {

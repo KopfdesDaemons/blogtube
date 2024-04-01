@@ -59,6 +59,7 @@
 
 .wp-block-post-navigation-link {
     @include color_button;
+    margin: 0.5em 0;
 }
 
 .wp-block-read-more {
@@ -446,16 +447,12 @@ blockquote {
 .wp-block-post-template {
     li {
         max-width: 65em;
-        border: 2px solid var(--blogtube_primary_variant_darker);
         background-color: black;
         border-radius: 12px;
         margin-bottom: 3em;
         padding: 1em;
-        box-shadow: 0 0 20px 0px var(--blogtube_primary_variant_darker);
 
         &:hover {
-            transition: all 0.2s;
-            box-shadow: 0 0 40px 5px var(--blogtube_primary_color);
             outline: 2px solid var(--blogtube_primary_color);
         }
     }
@@ -497,4 +494,9 @@ blockquote {
         overflow-wrap: anywhere;
         word-wrap: break-all;
     }
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+    background-color: black;
+    border: 1px solid rgba(0,0,0,.15);
 }

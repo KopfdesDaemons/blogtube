@@ -85,13 +85,17 @@ h6 {
     word-wrap: break-word;
     overflow-wrap: anywhere;
     margin: 0.2em 0;
+    color: var(--blogtube_font_color);
 }
 
-h1,
-h2,
-h3,
 p,
 span,
+cite,
+pre,
+blockquote,
+figure,
+dd,
+address,
 table,
 label,
 div,
