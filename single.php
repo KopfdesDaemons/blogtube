@@ -34,10 +34,12 @@
                         <a href="<?php echo esc_url(get_author_posts_url($blogtube_author_id)); ?>">
                             <?php echo $blogtube_author_avatar; ?>
                         </a>
-                        <a href="<?php echo esc_url(get_author_posts_url($blogtube_author_id)); ?>"><?php echo $blogtube_author_name; ?></a>
+                        <div>                            
+                            <a href="<?php echo esc_url(get_author_posts_url($blogtube_author_id)); ?>"><?php echo $blogtube_author_name; ?></a>
+                            <span class="blogtube_date"><?php printf(__('%s ago', 'blogtube'), $blogtube_time_difference); ?></span>
+                        </div>
                     </div>
                 <div class="blogtube_metadata_box">
-                    <span class="blogtube_date"><?php printf(__('%s ago', 'blogtube'), $blogtube_time_difference); ?></span>
                     <div class="blogtube_categorie_list">
                         <?php
                         $blogtube_categories = get_the_category();
@@ -64,7 +66,7 @@
                 <?php
                 wp_link_pages(
                     array(
-                        'before'         => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'blogtube') . '</span>',
+                        'before'         => '<div class="blogtube_pagination"><span class="page-links-title">' . esc_html__('Pages:', 'blogtube') . '</span>',
                         'after'       => '</div>',
                         'link_before' => '<span class="page-number">',
                         'link_after'  => '</span>',

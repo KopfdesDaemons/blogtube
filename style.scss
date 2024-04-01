@@ -16,7 +16,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @use 'scss/fonts.scss' as *;
 @use 'scss/mixins' as *;
 @use 'scss/404' as *;
-// @use 'scss/animations' as *;
 // @use 'scss/archive' as *;
 @use 'scss/comments' as *;
 @use 'scss/footer' as *;
@@ -132,11 +131,12 @@ img:hover {
 // user content in posts and pages
 .blogtube_user_content_container {
     min-height: 70vh;
-    margin: 2em 0;
+    margin: 1em 0;
     padding: 0 clamp(0.5rem, 2vw, 1rem);
     overflow: hidden;
     font-size: 1.4rem;
     flex-grow: 1;
+    // width: 100%;
 
     background-color: var(--blogtube_background_color_posts);
 
@@ -249,11 +249,41 @@ textarea:-webkit-autofill:focus {
     outline: none;
 }
 
+input:not([type="submit"], [type="checkbox"]), textarea {
+    border-radius: 4px 4px 0 0;
+    padding: 1em 0.5em;
+
+    &:focus {
+        border-bottom: 1px solid var(--blogtube_primary_variant_much_brighter);
+    }
+
+    &:hover {
+        background-color: #141414;
+        box-shadow: 0 0 0px 1000px #141414 inset;
+    }
+}
+
+select {
+    background-color: unset;
+    color: var(--blogtube_font_color);
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 100%;
+
+    option {
+        background-color: black;
+    }
+
+    &:hover {
+        background-color: rgb(66, 66, 66);
+    }
+}
+
 .gallery {
     display: grid;
 
     .gallery-item {
-        font-size: 0.8em;
+        font-size: 1em;
         overflow: hidden;
 
         img {
@@ -405,4 +435,25 @@ textarea:-webkit-autofill:focus {
     display: flex;
     flex-direction: column;
     grid-area: landingpagesection;
+}
+
+.post-password-form {
+    border-radius: 12px;
+    background-color: rgb(112, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    input[type="submit"] {
+        @include button;
+    }
 }

@@ -21,22 +21,6 @@
     img {
         height: auto;
     }
-
-    select {
-        background-color: unset;
-        color: var(--blogtube_font_color);
-        border-radius: 5px;
-        cursor: pointer;
-        max-width: 100%;
-
-        option {
-            background-color: black;
-        }
-
-        &:hover {
-            background-color: rgb(66, 66, 66);
-        }
-    }
 }
 
 .wp-block-post-author {

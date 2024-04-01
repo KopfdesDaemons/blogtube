@@ -21,7 +21,7 @@ get_header();
                     <?php
                     wp_link_pages(
                         array(
-                            'before'         => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'blogtube') . '</span>',
+                            'before'         => '<div class="blogtube_pagination"><span class="page-links-title">' . esc_html__('Pages:', 'blogtube') . '</span>',
                             'after'       => '</div>',
                             'link_before' => '<span class="page-number">',
                             'link_after'  => '</span>',
