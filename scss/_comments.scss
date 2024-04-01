@@ -1,12 +1,10 @@
 #comments {    
     input:not([type="submit"], [type="checkbox"]), textarea {
         border-radius: 4px 4px 0 0;
-        border-bottom: 1px solid var(--blogtube_primary_variant_darker);
         padding: 1em 0.5em;
 
         &:focus {
-            outline: none;
-            border-bottom: 1px solid var(--blogtube_primary_color);
+            border-bottom: 1px solid var(--blog_layouts_primary_variant_much_brighter);
         }
 
         &:hover {

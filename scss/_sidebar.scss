@@ -2,7 +2,16 @@
     // background-color: rgb(6, 6, 73);
     max-width: 402px;
     min-width: 300px;
-    padding: 24px 24px 0 0;
-    font-size: 1.2rem;
+    padding: 0 24px 50px 0;
+    font-size: 1.4rem;
     flex: 0 1 20%;
+    overflow: hidden;
+
+    .widget:first-of-type, .widget_block:first-of-type {
+        padding-top: 0;
+    }
+
+    .widget {
+        padding-bottom: 0;
+    }
 }

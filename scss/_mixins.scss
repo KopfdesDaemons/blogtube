@@ -1,11 +1,10 @@
 @mixin color_button {
     padding: 0.8em;
-    border-radius: 6px;
-    border: 1px solid var(--blog_layouts_primary_color);
-    background-color: black;
+    border-radius: 5em;
+    background-color: var(--blog_layouts_primary_variant_much_brighter);
     text-decoration: none;
-    color:  var(--blog_layouts_primary_color);
     display: flex;
+    color: black;
     cursor: pointer;
 
     &:hover {

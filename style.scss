@@ -104,14 +104,6 @@ button {
 
 a {
     color: var(--blogtube_primary_color);
-
-    &:visited {
-        color: var(--blogtube_primary_variant_darker);
-    }
-
-    &:hover {
-        color: var(--blogtube_primary_variant_brighter);
-    }
 }
 
 .home main .blogtube_content_spacer {
@@ -236,15 +228,6 @@ hr {
     width: 70%;
 }
 
-.widget {
-    margin-bottom: 1em;
-    padding: 1em;
-
-    p {
-        overflow-wrap: anywhere;
-    }
-}
-
 input:not([type="submit"], [type="checkbox"]),
 textarea,
 input:-webkit-autofill,
@@ -254,10 +237,12 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
     border: none;
-    background-color: black;
-    box-shadow: 0 0 0px 1000px black inset;
+    background-color: #121212;
+    box-shadow: 0 0 0px 1000px #141414 inset;
+    border-bottom: 1px solid var(--blogtube_font_color);
     color: var(--blogtube_font_color);
     -webkit-text-fill-color: var(--blogtube_font_color);
+    outline: none;
 }
 
 .gallery {

@@ -1,5 +1,48 @@
 @use 'mixins' as *;
 
+.widget {
+    // margin-bottom: 1em;
+    padding: 1em;
+
+    p {
+        overflow-wrap: anywhere;
+    }
+
+    ul,
+    ol {
+        padding: 0;
+        margin: 0;
+
+        .children {
+            padding-left: 0.5em;
+        }
+    }
+
+    img {
+        height: auto;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+    }
+
+    select {
+        background-color: unset;
+        color: var(--blog_layouts_font_color);
+        border-radius: 5px;
+        cursor: pointer;
+        max-width: 100%;
+
+        option {
+            background-color: black;
+        }
+
+        &:hover {
+            background-color: rgb(66, 66, 66);
+        }
+    }
+}
+
 .wp-block-post-author {
     background-color: black;
 }
@@ -22,6 +65,15 @@
 
     a {
         margin-right: 0;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--blog_layouts_primary_variant_much_brighter)
+        }
+    }
+    
+    .tag-link-count {
+        color: #9c9c9c
     }
 }
 
@@ -77,12 +129,12 @@
         overflow-x: auto;
         color: rgb(151, 151, 151);
     }
-    
+
     table thead tr {
         background-color: transparent;
         text-align: left;
     }
-    
+
     th,
     td {
         padding: 0.5em 0.5em;
@@ -90,7 +142,7 @@
         border-color: #555;
         border: 1px solid;
     }
-    
+
     thead {
         border-bottom: 2px solid;
     }
@@ -102,12 +154,12 @@
     th {
         background-color: black;
     }
-    
+
     tr {
         background-color: #1d2027;
         transition: all 400ms;
     }
-    
+
     // table with stripes
     &.is-style-stripes {
         border-bottom: none;
@@ -115,7 +167,7 @@
         th {
             background-color: transparent;
         }
-        
+
         tbody tr:nth-child(odd) {
             background-color: rgba(43, 45, 48, 0);
         }
@@ -162,7 +214,8 @@ blockquote {
     padding: 0;
 }
 
-.wp-block-latest-comments, .wp-block-comment-template {
+.wp-block-latest-comments,
+.wp-block-comment-template {
     .avatar {
         margin: 0.2em;
         border-radius: 8px;
@@ -178,12 +231,19 @@ blockquote {
         }
     }
 
-    .wp-block-latest-comments__comment-excerpt p, .wp-block-comment-content p {
+    .wp-block-latest-comments__comment-excerpt p,
+    .wp-block-comment-content p {
         max-height: 300px;
         overflow-y: auto;
         margin: 0.3em 0;
         padding: 1em 0.2em;
-        background-color: var(--blog_layouts_comments_background_color);
+        line-height: 1.5;
+        background-color: #28282d;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: rgb(66, 66, 66);
+        }
     }
 
     .wp-block-latest-comments__comment-link {
@@ -206,18 +266,20 @@ blockquote {
     justify-content: center;
     margin: 0.5em 0;
 
-    a {
+    a, input[type="submit"] {
         @include color_button;
+        border: none;
     }
 
-    .login-username, .login-password {
+    .login-username,
+    .login-password {
         display: flex;
         flex-direction: column;
     }
 }
 
 .wp-block-calendar {
-    background-color: black;
+    background-color: #212121;
     border-radius: 8px;
 
     table {
@@ -245,7 +307,8 @@ blockquote {
     }
 
     thead th {
-        background-color: var(--blog_layouts_primary_variant_darker);
+        color: var(--blog_layouts_primary_color);
+        background-color: unset;
     }
 
     tr {
@@ -264,8 +327,12 @@ blockquote {
     li {
         position: relative;
         list-style: none;
-        padding-left: 2em;
+        padding-left: 1.5em;
         margin: 0.2em;
+
+        .children {
+            padding: 0;
+        }
 
         a::before {
             content: '\f07b ';
@@ -276,6 +343,7 @@ blockquote {
 
         a {
             color: #b7b7b7;
+            text-decoration: none;
 
             &:hover {
                 color: var(--blog_layouts_primary_variant_much_brighter);
@@ -307,17 +375,26 @@ blockquote {
 }
 
 .wp-block-latest-posts__list {
-    img {
-        border-radius: 2px;
+    .wp-block-latest-posts__featured-image {
+        a {
+            width: 100%;
+        }
+
+        img {
+            border-radius: 2px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 8px;
+            height: auto;
+        }
     }
 
     li {
         padding: 0.5em;
         display: flex;
         flex-direction: column;
-        background-color: black;
         border-radius: 4px;
-        margin: 1em 0;
     }
 
     .wp-block-latest-posts__post-title {
@@ -326,6 +403,7 @@ blockquote {
         padding: 0.2em;
         margin: 0.2em 0;
         color: rgb(238, 238, 238);
+        text-decoration: none;
 
         &:hover {
             color: var(--blog_layouts_primary_variant_much_brighter);
@@ -338,22 +416,27 @@ blockquote {
         background-color: #1d2027;
         padding: 0.5em;
         gap: 0.5em;
+        border-radius: 5px;
 
         a {
             @include color_button;
+        }
+
+        &:hover {
+            background-color: rgb(66, 66, 66);
         }
     }
 }
 
 .wp-block-search__button {
-    padding: 0 0.8em;
-    border-radius: 6px;
-    border: 1px solid var(--blog_layouts_primary_color);
-    background-color: black;
+    padding: 0 16px;
+    border-radius: 18px;
+    background-color: #ffffff1a;
     min-height: 2.5em;
+    border: none;
 
     &:hover {
-        background-color: rgb(41, 41, 41);
+        background-color: rgba(255,255,255,0.2);
     }
 }
 
@@ -361,11 +444,12 @@ blockquote {
     border: none;
 }
 
-.wp-block-search__input {
-    border-radius: 8px;
+.witget .wp-block-search__input {
+    border-radius: 18px;
     border: 1px solid rgb(56, 56, 56);
     padding: 1em;
-    background-color: rgb(22, 22, 24);
+    background-color: #121212;
+    box-shadow: 0 0 0px 1000px #121212 inset;
     color: var(--blog_layouts_font_color);
 }
 
@@ -417,14 +501,20 @@ blockquote {
 }
 
 .wp-block-latest-comments__comment {
-    background-color: black;
+    border: 1px solid rgb(54, 54, 54);
     padding: 0.5em;
     border-radius: 4px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .wp-block-latest-comments__comment-link {
+        font-weight: 800;
+    }
 
     .wp-block-latest-comments__comment-excerpt {
         overflow-wrap: anywhere;
         word-wrap: break-all;
-        background-color: #28282d;
-        border-radius: 4px;
     }
 }
