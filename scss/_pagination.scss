@@ -1,0 +1,101 @@
+/*
+    Contains a uniform style for all pagination: feed, post, author page, search, wp-blocks.
+*/
+
+$font-size: clamp(12px, 1.5vw, 16px);
+
+.blogtube_pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size;
+    max-width: 100%;
+    gap: 0.5em;
+
+    ::-webkit-scrollbar {
+        height: 1px;
+    }
+
+    .blogtube_pagination_controls a {
+        background-color: var(--blogtube_primary_color);
+        margin: 0 0.5em;
+        padding: 0.8em 2em;
+        display: flex;
+        color: rgb(14, 14, 14);
+    }
+
+    .blogtube_pagination_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 100%;
+    }
+
+    .blogtube_pagination_pages {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.5em;
+        padding: 0 0.1em;
+    }
+}
+
+// basic pagination layout for all elements (Numbers + Buttons)
+#blogtube_main_content .wp-polls-paging a, 
+#blogtube_main_content .wp-polls-paging span,
+.wp-block-query-pagination-next,
+.wp-block-query-pagination-previous,
+.blogtube_pagination_controls a,
+.post-page-numbers,
+.page-numbers {
+    border-radius: 4px;
+    padding: 0.5em 0.8em;
+    background-color: black;
+    border: solid 1px gray;
+    white-space: nowrap;
+    user-select: none;
+}
+
+// pagination current page
+#blogtube_main_content .wp-polls-paging .current,
+.current {
+    // background-color: var(--blogtube_primary_variant_much_brighter);
+    border: solid 1px transparent;
+    color: var(--blogtube_font_color);
+}
+
+// pagination hover
+.wp-block-query-pagination-next:hover,
+.wp-block-query-pagination-previous:hover,
+.blogtube_pagination_controls a:hover,
+.page-numbers:not(.current, .dots):hover,
+.post-page-numbers:not(.current, .dots):hover {
+    background-color: rgb(54, 54, 54);
+}
+
+.dots{
+    background-color: transparent;
+}
+
+.wp-block-query-pagination.is-layout-flex {
+    flex-wrap: nowrap;
+    font-size: $font-size;
+    align-items: flex-start;
+}
+
+.wp-block-query-pagination-numbers {
+    overflow-x: auto;
+}
+
+#blogtube_main_content .wp-polls-paging {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: $font-size;
+    overflow-x: auto;
+}
+
+#blogtube_main_content .wp-polls-paging {
+    a, span {
+        color: var(--blogtube_font_color);
+    }
+}

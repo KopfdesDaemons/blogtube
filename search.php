@@ -3,14 +3,14 @@
 <main role="main" <?php if (get_theme_mod('searchresults_sidebar', true)) echo 'class="blogtube_has_sidebar"' ?>>
     <section class="blogtube_content_spacer"  id="blogtube_main_content">
         <?php
-        $blog_layouts_search_query = get_search_query();
+        $blogtube_search_query = get_search_query();
         $blogtube_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $blogtube_posts_per_page = get_option('posts_per_page');
         $blogtube_args = array(
             'post_type' => 'post',
             'posts_per_page' => $blogtube_posts_per_page,
             'paged' => $blogtube_paged,
-            's' => $blog_layouts_search_query,
+            's' => $blogtube_search_query,
         );
 
         $blogtube_query = new WP_Query($blogtube_args);

@@ -2,7 +2,6 @@
     position: fixed;
     left: 0;
     top: 0;
-    // box-sizing: border-box;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
@@ -14,6 +13,10 @@
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
+
+    a {
+        color: var(--blogtube_font_color);
+    }
     
     @media only screen and (min-width: 600px) {
         transform: translateX(0);

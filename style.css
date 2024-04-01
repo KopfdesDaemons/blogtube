@@ -105,7 +105,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding: 1em 0.5em;
 }
 #comments input:not([type=submit], [type=checkbox]):focus, #comments textarea:focus {
-  border-bottom: 1px solid var(--blog_layouts_primary_variant_much_brighter);
+  border-bottom: 1px solid var(--blogtube_primary_variant_much_brighter);
 }
 #comments input:not([type=submit], [type=checkbox]):hover, #comments textarea:hover {
   background-color: #141414;
@@ -401,6 +401,9 @@ body.admin-bar #blogtube_header {
   flex-direction: column;
   font-size: 1.4rem;
 }
+#blogtube_sidemenu a {
+  color: var(--blogtube_font_color);
+}
 @media only screen and (min-width: 600px) {
   #blogtube_sidemenu {
     transform: translateX(0);
@@ -528,17 +531,108 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   height: calc(100dvh - 32px);
 }
 
-.page {
+.page-template-default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
   padding-top: 8em;
 }
-.page main {
+.page-template-default main {
   margin-top: 0;
   padding-left: clamp(0em, 2vw, 1.2em);
   max-width: 100em;
+}
+
+/*
+    Contains a uniform style for all pagination: feed, post, author page, search, wp-blocks.
+*/
+.blogtube_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(12px, 1.5vw, 16px);
+  max-width: 100%;
+  gap: 0.5em;
+}
+.blogtube_pagination ::-webkit-scrollbar {
+  height: 1px;
+}
+.blogtube_pagination .blogtube_pagination_controls a {
+  background-color: var(--blogtube_primary_color);
+  margin: 0 0.5em;
+  padding: 0.8em 2em;
+  display: flex;
+  color: rgb(14, 14, 14);
+}
+.blogtube_pagination .blogtube_pagination_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.blogtube_pagination .blogtube_pagination_pages {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5em;
+  padding: 0 0.1em;
+}
+
+#blogtube_main_content .wp-polls-paging a,
+#blogtube_main_content .wp-polls-paging span,
+.wp-block-query-pagination-next,
+.wp-block-query-pagination-previous,
+.blogtube_pagination_controls a,
+.post-page-numbers,
+.page-numbers {
+  border-radius: 4px;
+  padding: 0.5em 0.8em;
+  background-color: black;
+  border: solid 1px gray;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#blogtube_main_content .wp-polls-paging .current,
+.current {
+  border: solid 1px transparent;
+  color: var(--blogtube_font_color);
+}
+
+.wp-block-query-pagination-next:hover,
+.wp-block-query-pagination-previous:hover,
+.blogtube_pagination_controls a:hover,
+.page-numbers:not(.current, .dots):hover,
+.post-page-numbers:not(.current, .dots):hover {
+  background-color: rgb(54, 54, 54);
+}
+
+.dots {
+  background-color: transparent;
+}
+
+.wp-block-query-pagination.is-layout-flex {
+  flex-wrap: nowrap;
+  font-size: clamp(12px, 1.5vw, 16px);
+  align-items: flex-start;
+}
+
+.wp-block-query-pagination-numbers {
+  overflow-x: auto;
+}
+
+#blogtube_main_content .wp-polls-paging {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: clamp(12px, 1.5vw, 16px);
+  overflow-x: auto;
+}
+
+#blogtube_main_content .wp-polls-paging a, #blogtube_main_content .wp-polls-paging span {
+  color: var(--blogtube_font_color);
 }
 
 .search .blogtube_content_spacer {
@@ -585,6 +679,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_hero .blogtube_hero_author_row a {
   text-decoration: none;
+  color: var(--blogtube_font_color);
 }
 .single .blogtube_hero .blogtube_hero_author_row img {
   height: 40px;
@@ -614,6 +709,16 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_post_footer {
   width: 100%;
+}
+.single .blogtube_post_tags {
+  font-size: 1.2rem;
+}
+.single .blogtube_post_tags ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5em;
+  list-style: none;
 }
 .single .blogtube_authorbox {
   display: flex;
@@ -679,10 +784,11 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   background-color: #292929;
 }
 .single .blogtube_post_pagination {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.2em;
+  padding: 0 1em;
 }
 .single .blogtube_post_pagination a {
   font-size: clamp(0.8em, 2vw, 1em);
@@ -714,7 +820,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .widget select {
   background-color: unset;
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
   border-radius: 5px;
   cursor: pointer;
   max-width: 100%;
@@ -749,7 +855,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   text-decoration: none;
 }
 .wp-block-tag-cloud a:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 .wp-block-tag-cloud .tag-link-count {
   color: #9c9c9c;
@@ -758,7 +864,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .wp-block-post-navigation-link {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blog_layouts_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_variant_much_brighter);
   text-decoration: none;
   display: flex;
   color: black;
@@ -771,7 +877,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .wp-block-read-more {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blog_layouts_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_variant_much_brighter);
   text-decoration: none;
   display: flex;
   color: black;
@@ -823,7 +929,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .wp-block-table th,
 .wp-block-table td {
   padding: 0.5em 0.5em;
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
   border-color: #555;
   border: 1px solid;
 }
@@ -859,7 +965,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 
 .wp-block-quote,
 blockquote {
-  border-left: 6px solid var(--blog_layouts_primary_color);
+  border-left: 6px solid var(--blogtube_primary_color);
   padding-left: 0.5em;
   display: flex;
   flex-direction: column;
@@ -899,7 +1005,7 @@ blockquote {
 }
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta a:hover,
 .wp-block-comment-template .wp-block-latest-comments__comment-meta a:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p,
 .wp-block-latest-comments .wp-block-comment-content p,
@@ -921,7 +1027,7 @@ blockquote {
 }
 .wp-block-latest-comments .wp-block-latest-comments__comment-link,
 .wp-block-comment-template .wp-block-latest-comments__comment-link {
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
 }
 
 .has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt,
@@ -942,7 +1048,7 @@ blockquote {
 .wp-block-loginout a, .wp-block-loginout input[type=submit] {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blog_layouts_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_variant_much_brighter);
   text-decoration: none;
   display: flex;
   color: black;
@@ -966,7 +1072,7 @@ blockquote {
   display: table;
 }
 .wp-block-calendar table:where(:not(.has-text-color)) {
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
 }
 .wp-block-calendar th,
 .wp-block-calendar td {
@@ -975,16 +1081,16 @@ blockquote {
 .wp-block-calendar th a,
 .wp-block-calendar td a {
   padding: 0.2em;
-  background-color: var(--blog_layouts_primary_variant_darker);
+  background-color: var(--blogtube_primary_variant_darker);
   border-radius: 4px;
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
 }
 .wp-block-calendar th a:hover,
 .wp-block-calendar td a:hover {
-  background-color: var(--blog_layouts_primary_color);
+  background-color: var(--blogtube_primary_color);
 }
 .wp-block-calendar thead th {
-  color: var(--blog_layouts_primary_color);
+  color: var(--blogtube_primary_color);
   background-color: unset;
 }
 .wp-block-calendar tr {
@@ -1023,7 +1129,7 @@ blockquote {
 }
 .wp-block-archives-list li a:hover,
 .wp-block-categories-list li a:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 
 .wp-block-archives-dropdown,
@@ -1043,7 +1149,7 @@ blockquote {
   color: #b7b7b7;
 }
 .wp-block-page-list a:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 
 .wp-block-latest-posts__list .wp-block-latest-posts__featured-image a {
@@ -1073,7 +1179,7 @@ blockquote {
   text-decoration: none;
 }
 .wp-block-latest-posts__list .wp-block-latest-posts__post-title:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt {
   display: flex;
@@ -1086,7 +1192,7 @@ blockquote {
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt a {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blog_layouts_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_variant_much_brighter);
   text-decoration: none;
   display: flex;
   color: black;
@@ -1120,7 +1226,7 @@ blockquote {
   padding: 1em;
   background-color: #121212;
   box-shadow: 0 0 0px 1000px #121212 inset;
-  color: var(--blog_layouts_font_color);
+  color: var(--blogtube_font_color);
 }
 
 .wp-block-search {
@@ -1134,17 +1240,17 @@ blockquote {
 
 .wp-block-post-template li {
   max-width: 65em;
-  border: 2px solid var(--blog_layouts_primary_variant_darker);
+  border: 2px solid var(--blogtube_primary_variant_darker);
   background-color: black;
   border-radius: 12px;
   margin-bottom: 3em;
   padding: 1em;
-  box-shadow: 0 0 20px 0px var(--blog_layouts_primary_variant_darker);
+  box-shadow: 0 0 20px 0px var(--blogtube_primary_variant_darker);
 }
 .wp-block-post-template li:hover {
   transition: all 0.2s;
-  box-shadow: 0 0 40px 5px var(--blog_layouts_primary_color);
-  outline: 2px solid var(--blog_layouts_primary_color);
+  box-shadow: 0 0 40px 5px var(--blogtube_primary_color);
+  outline: 2px solid var(--blogtube_primary_color);
 }
 
 .wp-block-rss {
@@ -1156,7 +1262,7 @@ blockquote {
   color: #b7b7b7;
 }
 .wp-block-rss a:hover {
-  color: var(--blog_layouts_primary_variant_much_brighter);
+  color: var(--blogtube_primary_variant_much_brighter);
 }
 .wp-block-rss .wp-block-rss__item-excerpt {
   background-color: #1d2027;
@@ -1180,18 +1286,26 @@ blockquote {
 }
 
 #blogtube_sidebar {
-  max-width: 402px;
   min-width: 300px;
   padding: 0 24px 50px 0;
   font-size: 1.4rem;
-  flex: 0 1 20%;
+  flex: 1 1 20%;
   overflow: hidden;
+  -moz-column-width: 15em;
+       column-width: 15em;
 }
 #blogtube_sidebar .widget:first-of-type, #blogtube_sidebar .widget_block:first-of-type {
   padding-top: 0;
 }
 #blogtube_sidebar .widget {
   padding-bottom: 0;
+  flex: 1 1 15em;
+  -webkit-column-break-inside: avoid;
+}
+@media only screen and (min-width: 1300px) {
+  #blogtube_sidebar {
+    max-width: 350px;
+  }
 }
 
 html {
@@ -1290,7 +1404,7 @@ img:hover {
 }
 
 .blogtube_user_content_container {
-  min-height: 60vh;
+  min-height: 70vh;
   margin: 2em 0;
   padding: 0 clamp(0.5rem, 2vw, 1rem);
   overflow: hidden;
@@ -1469,6 +1583,7 @@ textarea:-webkit-autofill:focus {
 }
 .blogtube_post_card a {
   text-decoration: none;
+  color: var(--blogtube_font_color);
 }
 .blogtube_post_card a h2 {
   font-weight: 400;
@@ -1512,12 +1627,13 @@ textarea:-webkit-autofill:focus {
   flex: 1 0 55%;
   line-height: 1.8rem;
 }
-.blogtube_post_card.blogtube_sticky_post {
+
+.home .blogtube_sticky_post {
   background-color: #142130;
   border-radius: 2em;
   border: none;
 }
-.blogtube_post_card.blogtube_sticky_post h2 {
+.home .blogtube_sticky_post h2 {
   color: #1c62b9;
 }
 

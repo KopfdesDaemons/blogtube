@@ -1,17 +1,22 @@
 #blogtube_sidebar {
-    // background-color: rgb(6, 6, 73);
-    max-width: 402px;
     min-width: 300px;
     padding: 0 24px 50px 0;
     font-size: 1.4rem;
-    flex: 0 1 20%;
+    flex: 1 1 20%;
     overflow: hidden;
-
+    column-width: 15em;
+    
     .widget:first-of-type, .widget_block:first-of-type {
         padding-top: 0;
     }
-
+    
     .widget {
         padding-bottom: 0;
+        flex: 1 1 15em;
+        -webkit-column-break-inside: avoid;
+    }
+    
+    @media only screen and (min-width: 1300px){
+        max-width: 350px;
     }
 }

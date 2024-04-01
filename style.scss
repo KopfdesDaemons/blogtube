@@ -23,7 +23,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @use 'scss/header' as *;
 @use 'scss/sidemenu' as *;
 @use 'scss/page' as *;
-// @use 'scss/pagination' as *;
+@use 'scss/pagination' as *;
 @use 'scss/search' as *;
 @use 'scss/single' as *;
 @use 'scss/wp-block' as *;
@@ -131,7 +131,7 @@ img:hover {
 
 // user content in posts and pages
 .blogtube_user_content_container {
-    min-height: 60vh;
+    min-height: 70vh;
     margin: 2em 0;
     padding: 0 clamp(0.5rem, 2vw, 1rem);
     overflow: hidden;
@@ -332,6 +332,7 @@ textarea:-webkit-autofill:focus {
     
     a {
         text-decoration: none;
+        color: var(--blogtube_font_color);
         
         h2 {
             font-weight: 400;
@@ -385,12 +386,14 @@ textarea:-webkit-autofill:focus {
         flex: 1 0 55%;
         line-height: 1.8rem;
     }
+}
 
-    &.blogtube_sticky_post {
+.home {
+    .blogtube_sticky_post {
         h2 {
             color: #1c62b9;
         }
-
+    
         background-color: #142130;
         border-radius: 2em;
         border: none;
