@@ -41,7 +41,7 @@ function blogtube_enqueue_scripts()
     wp_enqueue_script('blogtube_sidemenu_script', get_template_directory_uri() . '/js/blogtube_sidemenu.js', null, '1.0', true);
 
     // Infinitiyscroll Script
-    if(is_home()){
+    if(is_home() || is_search()){
         wp_enqueue_script('blogtube_infinityscroll_script', get_template_directory_uri() . '/js/blogtube_infinityscroll.js', null, '1.0', true);
        
         // Pass the Ajax URL to script.js

@@ -1,8 +1,10 @@
 var canLoad = true;
 var page = 2; // Initial page number
+var allResultsLoaded = false; // Variable, um den Status der Suchergebnisse zu verfolgen
 
 window.addEventListener('scroll', function() {
-    if (canLoad && window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+    // Überprüfen, ob das Laden möglich ist und ob nicht alle Suchergebnisse bereits geladen wurden
+    if (canLoad && !allResultsLoaded && window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
         canLoad = false;
 
         var xhr = new XMLHttpRequest();
@@ -15,6 +17,9 @@ window.addEventListener('scroll', function() {
                 if (xhr.responseText.trim() !== 'NoMorePosts') {
                     document.getElementById('blogtube_main_content').insertAdjacentHTML('beforeend', xhr.responseText);
                     page++;
+                } else {
+                    // Alle Suchergebnisse wurden geladen
+                    allResultsLoaded = true;
                 }
             }
         };

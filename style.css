@@ -500,6 +500,10 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   height: calc(100dvh - 32px);
 }
 
+.search .blogtube_content_spacer {
+  align-items: unset;
+}
+
 .single {
   display: flex;
   justify-content: center;
@@ -666,9 +670,6 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .widget img {
   height: auto;
-}
-.widget img:hover {
-  filter: brightness(0.8);
 }
 .widget select {
   background-color: unset;
@@ -1223,6 +1224,10 @@ button {
 
 a {
   color: var(--blogtube_primary_color);
+}
+
+img:hover {
+  filter: brightness(0.8);
 }
 
 .home main .blogtube_content_spacer {

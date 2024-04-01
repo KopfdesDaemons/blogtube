@@ -27,12 +27,4 @@
             ?>
     </section>
 </main>
-<!-- <?php
-if (get_theme_mod('feed_sidebar', true)) {
-    echo '<aside id="blogtube_sidebar" class="' . 'blogtube_sidebar_layout_' . esc_attr(get_theme_mod('feed_sidebar_layout', 'social')) . '">';
-    get_sidebar();
-    echo '</aside>';
-}
-?> -->
-
 <?php get_footer(); ?>

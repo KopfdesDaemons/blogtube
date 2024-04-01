@@ -24,7 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @use 'scss/sidemenu' as *;
 // @use 'scss/page' as *;
 // @use 'scss/pagination' as *;
-// @use 'scss/search' as *;
+@use 'scss/search' as *;
 @use 'scss/single' as *;
 @use 'scss/wp-block' as *;
 @use 'scss/sidebar' as *;
@@ -104,6 +104,10 @@ button {
 
 a {
     color: var(--blogtube_primary_color);
+}
+
+img:hover {
+    filter: brightness(0.8);
 }
 
 .home main .blogtube_content_spacer {
