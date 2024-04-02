@@ -1,58 +1,24 @@
 <?php
-    get_header();
-    $blogtube_side_bar;
-    $blogtube_archive_title = esc_html__('Archive', 'blogtube');
-    $blogtube_archive_post_list_style = 'cards';
-    $blogtube_sidebar_layout_setting = get_theme_mod('search_sidebar_layout', 'social');
+get_header();
+include_once get_template_directory() . '/template-parts/sidemenu.php';
 
-    if (is_author()) {
-        $blogtube_side_bar = get_theme_mod('author_page_sidebar', true);
-        $blogtube_sidebar_layout_setting = get_theme_mod('author_page_sidebar_layout', 'social');
-        $blogtube_archive_title = get_the_author();
-        $blogtube_archive_post_list_style = get_theme_mod('author_posts_style', 'cards');
-    } elseif (is_tag()) {
-        $blogtube_side_bar = get_theme_mod('tags_sidebar', true);
-        $blogtube_sidebar_layout_setting = get_theme_mod('tags_sidebar_layout', 'social');
-        $blogtube_archive_title = single_tag_title('', false);
-        $blogtube_archive_post_list_style = get_theme_mod('tag_list_style', 'cards');
-    } elseif (is_category()) {
-        $blogtube_side_bar = get_theme_mod('category_sidebar', true);
-        $blogtube_sidebar_layout_setting = get_theme_mod('category_sidebar_layout', 'social');
-        $blogtube_archive_title = single_cat_title('', false);
-        $blogtube_archive_post_list_style = get_theme_mod('category_list_style', 'cards');
-    } elseif (is_date()) {
-        $blogtube_side_bar = get_theme_mod('date_sidebar', true);
-        $blogtube_sidebar_layout_setting = get_theme_mod('date_sidebar_layout', 'social');
-        if (is_day()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date();
-        } elseif (is_month()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('F Y');
-        } elseif (is_year()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('Y');
-        }
-        $blogtube_archive_post_list_style = get_theme_mod('date_list_style', 'cards');
-    } elseif (is_search()) {
-        $blogtube_side_bar = get_theme_mod('search_sidebar', true);
-        $blogtube_sidebar_layout_setting = get_theme_mod('search_sidebar_layout', 'social');
-        $blogtube_archive_post_list_style = get_theme_mod('searchresults_style', 'cards');
-    } elseif (is_archive()) {
-        $blogtube_side_bar = get_theme_mod('archive_sidebar', true);
-    } else {
-        $blogtube_side_bar = true;
+$blogtube_archive_title = esc_html__('Archive', 'blogtube');
+if (is_author()) {
+    $blogtube_archive_title = get_the_author();
+} elseif (is_tag()) {
+    $blogtube_archive_title = single_tag_title('', false);
+} elseif (is_category()) {
+    $blogtube_archive_title = single_cat_title('', false);
+} elseif (is_date()) {
+    if (is_day()) {
+        $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date();
+    } elseif (is_month()) {
+        $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('F Y');
+    } elseif (is_year()) {
+        $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('Y');
     }
+}
 ?>
-
-
-<?php if (!is_author() || is_author() && !get_theme_mod('author_header', true)) { ?>
-    <section class="blogtube_hero">
-        <header>
-            <h1>
-                <?php echo $blogtube_archive_title; ?>
-            </h1>
-        </header>
-    </section>
-<?php } ?>
-
 
 <!-- author header -->
 <?php if (is_author() && get_theme_mod('author_header', true)) {
@@ -139,11 +105,10 @@
                 </div>
             </div>
         <?php endif; ?>
-
     </section>
 <?php } ?>
 
-<main role="main" <?php if ($blogtube_side_bar) echo 'class="blogtube_has_sidebar"' ?>>
+<main role="main">
     <section class="blogtube_content_spacer blogtube_content_spacer_feed blogtube_content_and_sidebar_grid">
         <?php if (is_author()) {; ?>
             <div class="blogtube_autor_content">
@@ -184,49 +149,22 @@
                 </div>
 
                 <?php
-                if (have_posts()) {
                     global $wp_query;
                     $wp_query->set('paged', 1);
 
-                    require_once get_template_directory() . '/template-parts/layout-manager.php';
-                    echo blogtube_display_posts_list($wp_query, $blogtube_archive_post_list_style);
-
-                    // Pagination 
-                    $blogtube_total_pages = $wp_query->max_num_pages;
-                    if ($blogtube_total_pages > 1) {
-                        echo '<div class="blogtube_pagination blogtube_shadow">';
-                        echo '<div class="blogtube_pagination_content">';
-
-                        echo '<div class="blogtube_pagination_controls">';
-                        previous_posts_link(__('« Previous', 'blogtube'));
-                        echo '</div>';
-
-                        echo '<div class="blogtube_pagination_pages">';
-                        echo paginate_links(array(
-                            'total' => $wp_query->max_num_pages,
-                            'current' => $paged,
-                            'prev_next' => false,
-                        ));
-                        echo '</div>';
-
-                        echo '<div class="blogtube_pagination_controls">';
-                        next_posts_link(__('Next »', 'blogtube'), $wp_query->max_num_pages);
-                        echo '</div>';
-
-                        echo '</div>';
+                    if ($wp_query->have_posts()) {
+                        while ($wp_query->have_posts()) {
+                            $wp_query->the_post();
+                            require_once get_template_directory() . '/template-parts/post-card.php';
+                            echo blogtube_display_post_card();
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        echo esc_html__('No posts found.', 'blogtube');
                     }
-                } else {
-                    echo esc_html__('No posts found.', 'blogtube');
-                }
                 ?>
             </div>
             </div>
     </section>
 </main>
-<?php
-if ($blogtube_side_bar) {
-    echo '<aside id="blogtube_sidebar" class="' . 'blogtube_sidebar_layout_' . esc_attr($blogtube_sidebar_layout_setting) . '">';
-    get_sidebar();
-    echo '</aside>';
-}
-get_footer(); ?>
+<?php get_footer(); ?>

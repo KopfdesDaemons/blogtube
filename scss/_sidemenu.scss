@@ -1,9 +1,11 @@
-.blogtube_sidemenu_open #blogtube_sidemenu_closing_div {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    right: 0;
+@media only screen and (max-width: 600px){
+    .blogtube_sidemenu_open #blogtube_sidemenu_closing_div {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        right: 0;
+    }
 }
 
 #blogtube_sidemenu {
