@@ -2,13 +2,16 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
     padding-top: 8em;
 
     main {
         margin-top: 0;
         padding-left: clamp(0em, 2vw, 1.2em);
-        max-width: 100em;
+        max-width: 90em;
+
+        @media only screen and (min-width: 1000px) {
+            min-width: unset;
+        }
     }
 
     .blogtube_content_spacer {
@@ -67,7 +70,7 @@
 
         .blogtube_metadata_box {
             background-color: #ffffff1a;
-            margin: 12px 12px 0 0;
+            margin: 12px 0 0 0;
             padding: 12px;
             border-radius: 12px;
             font-size: 1.4rem;

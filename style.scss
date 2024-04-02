@@ -58,7 +58,8 @@ body {
 main {
     min-height: 90vh;
     display: flex;
-    flex: 1 1 60%;
+    flex: 1 0 60%;
+    min-width: 60%;
     flex-direction: column;
     align-items: center;
     margin-top: 6em;
@@ -163,6 +164,7 @@ img:hover {
 
     figure {
         margin: 0;
+        max-width: 100%;
     }
 
     img {
@@ -219,7 +221,7 @@ code {
 
 figcaption {
     font-style: italic;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 dt {
@@ -442,22 +444,27 @@ select {
 }
 
 .post-password-form {
-    border-radius: 12px;
-    background-color: rgb(112, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
-
+    
     p {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 0.5em;
+        margin-bottom: 4em;
+        
+        &:first-of-type {
+            padding: 1em;
+            border-radius: 12px;
+            background-color: rgb(112, 0, 0);
+        }
     }
 
     input[type="submit"] {
-        @include button;
+        @include color_button;
+        border: none;
     }
 }

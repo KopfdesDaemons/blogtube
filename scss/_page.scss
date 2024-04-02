@@ -2,13 +2,18 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
     padding-top: 8em;
 
     main {
         margin-top: 0;
         padding-left: clamp(0em, 2vw, 1.2em);
         max-width: 100em;
+
+        max-width: 90em;
+
+        @media only screen and (min-width: 1000px) {
+            min-width: unset;
+        }
     }
 
     .blogtube_content_spacer {

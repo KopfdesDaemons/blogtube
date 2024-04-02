@@ -524,13 +524,18 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
   padding-top: 8em;
 }
 .page-template-default main {
   margin-top: 0;
   padding-left: clamp(0em, 2vw, 1.2em);
   max-width: 100em;
+  max-width: 90em;
+}
+@media only screen and (min-width: 1000px) {
+  .page-template-default main {
+    min-width: unset;
+  }
 }
 .page-template-default .blogtube_content_spacer {
   align-items: unset;
@@ -635,13 +640,17 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
   padding-top: 8em;
 }
 .single main {
   margin-top: 0;
   padding-left: clamp(0em, 2vw, 1.2em);
-  max-width: 100em;
+  max-width: 90em;
+}
+@media only screen and (min-width: 1000px) {
+  .single main {
+    min-width: unset;
+  }
 }
 .single .blogtube_content_spacer {
   align-items: unset;
@@ -692,7 +701,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_hero .blogtube_metadata_box {
   background-color: rgba(255, 255, 255, 0.1019607843);
-  margin: 12px 12px 0 0;
+  margin: 12px 0 0 0;
   padding: 12px;
   border-radius: 12px;
   font-size: 1.4rem;
@@ -1299,10 +1308,12 @@ blockquote {
   min-width: 300px;
   padding: 0 24px 50px 0;
   font-size: 1.4rem;
-  flex: 1 1 20%;
+  flex: 1 0 auto;
   overflow: hidden;
   -moz-column-width: 15em;
        column-width: 15em;
+  max-width: 350px;
+  box-sizing: border-box;
 }
 #blogtube_sidebar .widget:first-of-type, #blogtube_sidebar .widget_block:first-of-type {
   padding-top: 0;
@@ -1312,9 +1323,9 @@ blockquote {
   flex: 1 1 15em;
   -webkit-column-break-inside: avoid;
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (max-width: 960px) {
   #blogtube_sidebar {
-    max-width: 350px;
+    max-width: 100%;
   }
 }
 
@@ -1347,7 +1358,8 @@ body {
 main {
   min-height: 90vh;
   display: flex;
-  flex: 1 1 60%;
+  flex: 1 0 60%;
+  min-width: 60%;
   flex-direction: column;
   align-items: center;
   margin-top: 6em;
@@ -1441,6 +1453,7 @@ img:hover {
 }
 .blogtube_user_content_container figure {
   margin: 0;
+  max-width: 100%;
 }
 .blogtube_user_content_container img {
   margin: 0.6em 0;
@@ -1489,7 +1502,7 @@ code {
 
 figcaption {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 dt {
@@ -1685,12 +1698,9 @@ select:hover {
 }
 
 .post-password-form {
-  border-radius: 12px;
-  background-color: rgb(112, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1em;
 }
 .post-password-form p {
   display: flex;
@@ -1698,20 +1708,27 @@ select:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5em;
+  margin-bottom: 4em;
+}
+.post-password-form p:first-of-type {
+  padding: 1em;
+  border-radius: 12px;
+  background-color: rgb(112, 0, 0);
 }
 .post-password-form input[type=submit] {
-  border-radius: 4px;
-  padding: 0.8em 1.2em;
-  background-color: black;
-  border: solid 1px gray;
-  white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  padding: 0.8em;
+  border-radius: 5em;
+  background-color: var(--blogtube_primary_variant_much_brighter);
   text-decoration: none;
-  color: rgb(177, 177, 177);
+  display: flex;
+  color: black;
   cursor: pointer;
+  border: none;
 }
 .post-password-form input[type=submit]:hover {
   background-color: rgb(41, 41, 41);
+}
+.post-password-form input[type=submit] a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

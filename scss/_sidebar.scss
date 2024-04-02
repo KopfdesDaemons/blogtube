@@ -2,9 +2,11 @@
     min-width: 300px;
     padding: 0 24px 50px 0;
     font-size: 1.4rem;
-    flex: 1 1 20%;
+    flex: 1 0 auto;
     overflow: hidden;
     column-width: 15em;
+    max-width: 350px;
+    box-sizing: border-box;
     
     .widget:first-of-type, .widget_block:first-of-type {
         padding-top: 0;
@@ -16,7 +18,7 @@
         -webkit-column-break-inside: avoid;
     }
     
-    @media only screen and (min-width: 1300px){
-        max-width: 350px;
+    @media only screen and (max-width: 960px){
+        max-width: 100%;
     }
 }
