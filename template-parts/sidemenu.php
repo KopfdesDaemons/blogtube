@@ -1,3 +1,4 @@
+<div id="blogtube_sidemenu_closing_div"></div>
 <aside id="blogtube_sidemenu">
     <div class="blogtube_sidebar_content">
         <nav>

@@ -1,3 +1,11 @@
+.blogtube_sidemenu_open #blogtube_sidemenu_closing_div {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+}
+
 #blogtube_sidemenu {
     position: fixed;
     left: 0;
@@ -13,6 +21,7 @@
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
+    z-index: 1;
 
     a {
         color: var(--blogtube_font_color);

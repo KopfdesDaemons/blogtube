@@ -41,10 +41,22 @@ window.addEventListener("DOMContentLoaded", function () {
     const sidemenuToggle = this.document.querySelector('#blogtube_sidemenu_toggle');
     const body = this.document.querySelector('body');
     sidemenuToggle.addEventListener('click', toogleSidemenu);
-    sidemenuToggle.addEventListener('keydown', toogleSidemenu)
+    sidemenuToggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            toogleSidemenu(event);
+        }
+    });
 
     function toogleSidemenu() {
         body.classList.toggle('blogtube_sidemenu_open');
+    }
+
+    // Closing div (mobile)
+    const closingDiv = this.document.querySelector('#blogtube_sidemenu_closing_div');
+    closingDiv.addEventListener('click', closeSidemenu)
+    function closeSidemenu() {
+        console.log("test");
+        body.classList.remove('blogtube_sidemenu_open');
     }
 
 }, false);
