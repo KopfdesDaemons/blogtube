@@ -100,6 +100,43 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-size: 5rem;
 }
 
+.blogtube_post_author_headline_section {
+  margin-top: 12em;
+  display: flex;
+  justify-content: center;
+}
+.blogtube_post_author_headline_section header {
+  padding: 0 clamp(1em, 2vw, 2em);
+  max-width: 100em;
+  flex: 1 1 auto;
+  display: flex;
+  gap: 3em;
+  padding: 0 3em 3em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.blogtube_post_author_headline_section header img {
+  border-radius: 10em;
+  width: clamp(80px, 20vw, 160px);
+  height: clamp(80px, 20vw, 160px);
+}
+.blogtube_post_author_headline_section header .blogtube_author_data {
+  font-size: 1.4rem;
+}
+.blogtube_post_author_headline_section header .blogtube_author_data h1 {
+  font-size: 3.6rem;
+  margin-top: 0;
+}
+.blogtube_post_author_headline_section header .blogtube_author_data .blogtube_author_name::before {
+  content: "@";
+}
+.blogtube_post_author_headline_section header .blogtube_author_data .blogtube_author_name::after {
+  content: "‧";
+  margin: 0 0.5em;
+}
+.blogtube_post_author_headline_section + main {
+  margin-top: 2em;
+}
+
 #comments .says {
   display: none;
 }
