@@ -1,25 +1,31 @@
 .blogtube_post_author_headline_section {
-    margin-top: 12em;
+    margin-top: clamp(8em, 2vw, 10em);
     display: flex;
     justify-content: center;
     
     header {
-        padding: 0 clamp(1em, 2vw, 2em);
+        padding: 1em clamp(2em, 2vw, 2em);
         max-width: 100em;
         flex: 1 1 auto;
         display: flex;
-        gap: 3em;
-        padding: 0 3em 3em 0;
+        flex-wrap: wrap;
+        gap: clamp(2em, 2vw, 3em);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        justify-content: center;
+        align-items: flex-start;
 
         img {
             border-radius: 10em;
-            width: clamp(80px, 20vw, 160px);
-            height: clamp(80px, 20vw, 160px);
+            height: auto;
+            width: auto;
+            max-width: 160px;
+            min-width: 120px;
+            flex: 1 1 30%;
         }
 
         .blogtube_author_data {
             font-size: 1.4rem;
+            flex: 1 0 50%;
 
             h1 {
                 font-size: 3.6rem;
@@ -39,5 +45,9 @@
 
     &+main {
         margin-top: 2em;
+
+        .blogtube_post_card .blogtube_post_card_author_row {
+            display: none;
+        }
     }
 }

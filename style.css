@@ -101,26 +101,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .blogtube_post_author_headline_section {
-  margin-top: 12em;
+  margin-top: clamp(8em, 2vw, 10em);
   display: flex;
   justify-content: center;
 }
 .blogtube_post_author_headline_section header {
-  padding: 0 clamp(1em, 2vw, 2em);
+  padding: 1em clamp(2em, 2vw, 2em);
   max-width: 100em;
   flex: 1 1 auto;
   display: flex;
-  gap: 3em;
-  padding: 0 3em 3em 0;
+  flex-wrap: wrap;
+  gap: clamp(2em, 2vw, 3em);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: flex-start;
 }
 .blogtube_post_author_headline_section header img {
   border-radius: 10em;
-  width: clamp(80px, 20vw, 160px);
-  height: clamp(80px, 20vw, 160px);
+  height: auto;
+  width: auto;
+  max-width: 160px;
+  min-width: 120px;
+  flex: 1 1 30%;
 }
 .blogtube_post_author_headline_section header .blogtube_author_data {
   font-size: 1.4rem;
+  flex: 1 0 50%;
 }
 .blogtube_post_author_headline_section header .blogtube_author_data h1 {
   font-size: 3.6rem;
@@ -135,6 +141,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 .blogtube_post_author_headline_section + main {
   margin-top: 2em;
+}
+.blogtube_post_author_headline_section + main .blogtube_post_card .blogtube_post_card_author_row {
+  display: none;
 }
 
 #comments .says {
@@ -584,9 +593,6 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
     min-width: unset;
   }
 }
-.page-template-default .blogtube_content_spacer {
-  align-items: unset;
-}
 
 /*
     Contains a uniform style for all pagination: feed, post, author page, search, wp-blocks.
@@ -698,9 +704,6 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
     min-width: unset;
   }
 }
-.single .blogtube_content_spacer {
-  align-items: unset;
-}
 .single .blogtube_hero {
   width: 100%;
 }
@@ -786,7 +789,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   margin: 2em 0 3em 0;
   border-radius: 0.3em;
   background-color: #212121;
-  border-radius: 16px;
+  border-radius: 12px;
   font-size: 1.2rem;
 }
 .single .blogtube_authorbox .blogtube_author_avatar {
@@ -1455,21 +1458,15 @@ a {
   color: var(--blogtube_primary_color);
 }
 
-img:hover {
-  filter: brightness(0.8);
-}
-
 .home main .blogtube_content_spacer {
   max-width: unset;
   width: unset;
-  align-items: unset;
 }
 
 .blogtube_content_spacer {
   max-width: 100em;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
@@ -1483,8 +1480,6 @@ img:hover {
   padding: 0 clamp(0.5rem, 2vw, 1rem);
   overflow: hidden;
   font-size: 1.4rem;
-  flex-grow: 1;
-  background-color: var(--blogtube_background_color_posts);
 }
 .blogtube_user_content_container .wp-block-columns {
   margin: 1em 0 0 0;
@@ -1526,6 +1521,9 @@ iframe {
 
 img {
   max-width: 100%;
+}
+img:hover {
+  filter: brightness(0.8);
 }
 
 select {
@@ -1736,13 +1734,6 @@ select:hover {
 }
 .home .blogtube_sticky_post h2 {
   color: #1c62b9;
-}
-
-.blogtube_hero {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  grid-area: landingpagesection;
 }
 
 .post-password-form {
