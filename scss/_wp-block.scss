@@ -1,7 +1,6 @@
 @use 'mixins' as *;
 
 .widget {
-    // margin-bottom: 1em;
     padding: 1em;
 
     p {
@@ -48,12 +47,12 @@
         text-decoration: none;
 
         &:hover {
-            color: var(--blogtube_primary_variant_much_brighter)
+            color: var(--blogtube_primary_color)
         }
     }
     
     .tag-link-count {
-        color: #9c9c9c
+        color: var(--blogtube_font_color);
     }
 }
 
@@ -208,7 +207,7 @@ blockquote {
         transition: background-color 400ms;
 
         a:hover {
-            color: var(--blogtube_primary_variant_much_brighter);
+            color: var(--blogtube_primary_color);
         }
     }
 
@@ -323,11 +322,11 @@ blockquote {
         }
 
         a {
-            color: #b7b7b7;
+            color: var(--blogtube_font_color);
             text-decoration: none;
 
             &:hover {
-                color: var(--blogtube_primary_variant_much_brighter);
+                color: var(--blogtube_primary_color);
             }
         }
     }
@@ -347,10 +346,10 @@ blockquote {
     padding-left: 2em;
 
     a {
-        color: #b7b7b7;
+        color: var(--blogtube_font_color);
 
         &:hover {
-            color: var(--blogtube_primary_variant_much_brighter);
+            color: var(--blogtube_primary_color);
         }
     }
 }
@@ -383,11 +382,11 @@ blockquote {
         transition: background-color 400ms;
         padding: 0.2em;
         margin: 0.2em 0;
-        color: rgb(238, 238, 238);
+        color: var(--blogtube_font_color);
         text-decoration: none;
 
         &:hover {
-            color: var(--blogtube_primary_variant_much_brighter);
+            color: var(--blogtube_primary_color);
         }
     }
 
@@ -464,10 +463,10 @@ blockquote {
     gap: 0.5em;
 
     a {
-        color: #b7b7b7;
+        color: var(--blogtube_font_color);
 
         &:hover {
-            color: var(--blogtube_primary_variant_much_brighter);
+            color: var(--blogtube_primary_color);
         }
     }
 

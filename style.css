@@ -162,7 +162,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding-left: 0;
 }
 #comments a {
-  color: rgb(177, 177, 177);
+  color: var(--blogtube_font_color);
 }
 #comments .comment, #comments .children, #comments .pingback, #comments .trackback {
   list-style: none;
@@ -307,7 +307,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   cursor: pointer;
 }
 #comments.blogtube_comments_layout_portal #submit:hover {
-  background-color: #3ea6ff;
+  background-color: var(--blogtube_primary_color);
   color: black;
 }
 
@@ -521,6 +521,7 @@ body.admin-bar #blogtube_header {
 }
 #blogtube_sidemenu nav {
   border-bottom: 1px solid #3f3f3f;
+  margin-bottom: 1em;
 }
 #blogtube_sidemenu .blogtube_sidebar_mainmenu li {
   display: flex;
@@ -767,7 +768,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_hero .blogtube_metadata_box .blogtube_categorie_list ul li a {
   text-decoration: none;
-  color: #3ea6ff;
+  color: var(--blogtube_primary_color);
 }
 .single .blogtube_post_footer {
   width: 100%;
@@ -905,16 +906,16 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   text-decoration: none;
 }
 .wp-block-tag-cloud a:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 .wp-block-tag-cloud .tag-link-count {
-  color: #9c9c9c;
+  color: var(--blogtube_font_color);
 }
 
 .wp-block-post-navigation-link {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blogtube_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_color);
   text-decoration: none;
   display: flex;
   color: black;
@@ -932,7 +933,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .wp-block-read-more {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blogtube_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_color);
   text-decoration: none;
   display: flex;
   color: black;
@@ -1064,7 +1065,7 @@ blockquote {
 }
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta a:hover,
 .wp-block-comment-template .wp-block-latest-comments__comment-meta a:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p,
 .wp-block-latest-comments .wp-block-comment-content p,
@@ -1107,7 +1108,7 @@ blockquote {
 .wp-block-loginout a, .wp-block-loginout input[type=submit] {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blogtube_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_color);
   text-decoration: none;
   display: flex;
   color: black;
@@ -1187,12 +1188,12 @@ blockquote {
 }
 .wp-block-archives-list li a,
 .wp-block-categories-list li a {
-  color: #b7b7b7;
+  color: var(--blogtube_font_color);
   text-decoration: none;
 }
 .wp-block-archives-list li a:hover,
 .wp-block-categories-list li a:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 
 .wp-block-archives-dropdown,
@@ -1209,10 +1210,10 @@ blockquote {
   padding-left: 2em;
 }
 .wp-block-page-list a {
-  color: #b7b7b7;
+  color: var(--blogtube_font_color);
 }
 .wp-block-page-list a:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 
 .wp-block-latest-posts__list .wp-block-latest-posts__featured-image a {
@@ -1238,11 +1239,11 @@ blockquote {
   transition: background-color 400ms;
   padding: 0.2em;
   margin: 0.2em 0;
-  color: rgb(238, 238, 238);
+  color: var(--blogtube_font_color);
   text-decoration: none;
 }
 .wp-block-latest-posts__list .wp-block-latest-posts__post-title:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt {
   display: flex;
@@ -1255,7 +1256,7 @@ blockquote {
 .wp-block-latest-posts__list .wp-block-latest-posts__post-excerpt a {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blogtube_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_color);
   text-decoration: none;
   display: flex;
   color: black;
@@ -1322,10 +1323,10 @@ blockquote {
   gap: 0.5em;
 }
 .wp-block-rss a {
-  color: #b7b7b7;
+  color: var(--blogtube_font_color);
 }
 .wp-block-rss a:hover {
-  color: var(--blogtube_primary_variant_much_brighter);
+  color: var(--blogtube_primary_color);
 }
 .wp-block-rss .wp-block-rss__item-excerpt {
   background-color: #1d2027;
@@ -1386,8 +1387,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #0f0f0f;
-  font-family: "Roboto", "Arial", sans-serif;
+  background-color: var(--blogtube_body_background_color);
+  font-family: var(--blogtube_body_font);
 }
 
 .blogtube_skip_link {
@@ -1587,7 +1588,7 @@ input:not([type=submit], [type=checkbox]), textarea {
   padding: 1em 0.5em;
 }
 input:not([type=submit], [type=checkbox]):focus, textarea:focus {
-  border-bottom: 1px solid var(--blogtube_primary_variant_much_brighter);
+  border-bottom: 1px solid var(--blogtube_primary_color);
 }
 input:not([type=submit], [type=checkbox]):hover, textarea:hover {
   background-color: #141414;
@@ -1677,7 +1678,7 @@ select:hover {
   gap: 1em;
 }
 .blogtube_post_card p, .blogtube_post_card span, .blogtube_post_card div {
-  color: #aaa;
+  color: var(--blogtube_font_color);
   font-size: 1.2rem;
 }
 .blogtube_post_card a {
@@ -1728,12 +1729,12 @@ select:hover {
 }
 
 .home .blogtube_sticky_post {
-  background-color: #142130;
+  background-color: var(--blogtube_primary_variant_darker);
   border-radius: 2em;
   border: none;
 }
 .home .blogtube_sticky_post h2 {
-  color: #1c62b9;
+  color: var(--blogtube_primary_color);
 }
 
 .post-password-form {
@@ -1757,7 +1758,7 @@ select:hover {
 .post-password-form input[type=submit] {
   padding: 0.8em;
   border-radius: 5em;
-  background-color: var(--blogtube_primary_variant_much_brighter);
+  background-color: var(--blogtube_primary_color);
   text-decoration: none;
   display: flex;
   color: black;

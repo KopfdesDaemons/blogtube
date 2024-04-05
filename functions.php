@@ -70,10 +70,8 @@ function blogtube_register_menus()
 {
     register_nav_menus(
         array(
-            'header-menu' => __('Header Menu', 'blogtube'),
             'sidemenu' => __('Sidemenu', 'blogtube'),
             'legal links' => __('legal links', 'blogtube'),
-            'footer-menu' => __('Footer Menu', 'blogtube')
         )
     );
 }
@@ -91,19 +89,6 @@ function blogtube_register_sidebar()
     ));
 }
 add_action('widgets_init', 'blogtube_register_sidebar');
-
-function blogtube_register_landigpage_widget_area()
-{
-    register_sidebar(array(
-        'name' => __('Landingpage Widget Area', 'blogtube'),
-        'id' => 'landingpage-widget-area',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
-    ));
-}
-add_action('widgets_init', 'blogtube_register_landigpage_widget_area');
 
 // Custom menu structure
 class blogtube_menu_walker extends Walker_Nav_Menu
@@ -125,28 +110,19 @@ class blogtube_menu_walker extends Walker_Nav_Menu
     }
 }
 
-// // customizer settings
-// $blogtube_customizer_options = [
-//     'global-options.php',
-//     'header-options.php',
-//     'feed-options.php',
-//     'posts-options.php',
-//     'pages-options.php',
-//     'author-page-options.php',
-//     'searchresults-options.php',
-//     'layout-options.php',
-//     'post-list-layouts/cards-options.php',
-//     'post-list-layouts/frameless-post-list.php',
-//     'post-list-layouts/material2-post-list.php',
-//     'post-list-layouts/material3-post-list.php',
-//     'tag-list-options.php',
-//     'category-list-options.php',
-//     'date-list-options.php'
-// ];
+// customizer settings
+$blogtube_customizer_options = [
+    'global-options.php',
+    // 'header-options.php',
+    // 'feed-options.php',
+    // 'posts-options.php',
+    // 'pages-options.php',
+    // 'author-page-options.php',
+];
 
-// foreach ($blogtube_customizer_options as $option) {
-//     require_once get_template_directory() . '/customizer-options/' . $option;
-// }
+foreach ($blogtube_customizer_options as $option) {
+    require_once get_template_directory() . '/customizer-options/' . $option;
+}
 
 // Sanitize function to check checkbox value (true/false)
 function blogtube_sanitize_checkbox($input)

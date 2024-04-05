@@ -58,7 +58,7 @@ $font-size: clamp(12px, 1.5vw, 16px);
 // pagination current page
 #blogtube_main_content .wp-polls-paging .current,
 .current {
-    // background-color: var(--blogtube_primary_variant_much_brighter);
+    // background-color: var(--blogtube_primary_color);
     border: solid 1px transparent;
     color: var(--blogtube_font_color);
 }

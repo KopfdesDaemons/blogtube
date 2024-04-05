@@ -19,7 +19,7 @@
     }
 
     a {
-        color: rgb(177, 177, 177);
+        color: var(--blogtube_font_color);
     }
 
     .comment, .children, .pingback, .trackback  {
@@ -197,7 +197,7 @@
             cursor: pointer;
     
             &:hover {
-                background-color: #3ea6ff;
+                background-color: var(--blogtube_primary_color);
                 color: black;
             }
         }

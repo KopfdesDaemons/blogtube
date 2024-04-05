@@ -36,8 +36,8 @@ html {
 
 body {
     margin: 0;
-    background-color: #0f0f0f;
-    font-family: "Roboto","Arial",sans-serif;
+    background-color: var(--blogtube_body_background_color);
+    font-family: var(--blogtube_body_font);
 }
 
 .blogtube_skip_link {
@@ -254,7 +254,7 @@ input:not([type="submit"], [type="checkbox"]), textarea {
     padding: 1em 0.5em;
 
     &:focus {
-        border-bottom: 1px solid var(--blogtube_primary_variant_much_brighter);
+        border-bottom: 1px solid var(--blogtube_primary_color);
     }
 
     &:hover {
@@ -356,7 +356,7 @@ select {
     gap: 1em;
 
     p, span, div {
-        color: #aaa;
+        color: var(--blogtube_font_color);
         font-size: 1.2rem;
     }
     
@@ -421,10 +421,10 @@ select {
 .home {
     .blogtube_sticky_post {
         h2 {
-            color: #1c62b9;
+            color: var(--blogtube_primary_color);
         }
     
-        background-color: #142130;
+        background-color:var(--blogtube_primary_variant_darker);
         border-radius: 2em;
         border: none;
     }

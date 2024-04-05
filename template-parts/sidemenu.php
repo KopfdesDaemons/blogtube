@@ -21,7 +21,7 @@
                     'walker' => new blogtube_menu_walker(),
                 ));
             } else {
-                echo '<div>' . esc_html__('Select a menu in the customizer', 'blog-layouts') . '</div>';
+                echo '<div>' . esc_html__('Select a menu in the customizer', 'blogtube') . '</div>';
             }
             ?>
         </nav>
