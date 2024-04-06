@@ -642,16 +642,16 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   border-radius: 4px;
   padding: 0.5em 0.8em;
   background-color: rgb(41, 41, 41);
-  border: solid 1px gray;
   white-space: nowrap;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  border: solid 1px transparent;
 }
 
 #blogtube_main_content .wp-polls-paging .current,
 .current {
-  border: solid 1px transparent;
+  border: solid 1px gray;
   color: var(--blogtube_font_color);
 }
 
@@ -1457,14 +1457,6 @@ blockquote {
 .widget_polls-widget .wp-polls-loading {
   display: none;
 }
-.widget_polls-widget .wp-polls-ul input {
-  background-color: var(--blogtube_primary_variant_darker);
-  box-shadow: initial;
-}
-.widget_polls-widget .wp-polls-ul input:checked {
-  background-color: var(--blogtube_primary_color);
-  box-shadow: 0 0 0px 1000px var(--blogtube_primary_color) inset;
-}
 
 .wp-polls .Buttons {
   padding: 0.8em;
@@ -1503,13 +1495,14 @@ body {
 
 .blogtube_skip_link {
   position: absolute;
-  top: -50px;
+  top: -100px;
   left: 0;
-  background-color: var(--blogtube_background_color);
-  color: #fff;
+  background-color: var(--blogtube_primary_variant_darker);
+  color: var(--blogtube_font_color);
   padding: 1em;
   border: 1px solid var(--blogtube_primary_color);
   z-index: 999;
+  font-size: 1.6rem;
 }
 
 .blogtube_skip_link:focus {
@@ -1676,7 +1669,7 @@ hr {
   width: 70%;
 }
 
-input:not([type=submit], [type=button], [type=checkbox]),
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]),
 textarea,
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -1693,14 +1686,14 @@ textarea:-webkit-autofill:focus {
   outline: none;
 }
 
-input:not([type=submit], [type=button], [type=checkbox]), textarea {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]), textarea {
   border-radius: 4px 4px 0 0;
   padding: 1em 0.5em;
 }
-input:not([type=submit], [type=button], [type=checkbox]):focus, textarea:focus {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]):focus, textarea:focus {
   border-bottom: 1px solid var(--blogtube_primary_color);
 }
-input:not([type=submit], [type=button], [type=checkbox]):hover, textarea:hover {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]):hover, textarea:hover {
   background-color: #141414;
   box-shadow: 0 0 0px 1000px #141414 inset;
 }

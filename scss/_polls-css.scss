@@ -67,16 +67,6 @@
     .wp-polls-loading {
         display: none;
     }
-
-    .wp-polls-ul input {
-        background-color: var(--blogtube_primary_variant_darker);
-        box-shadow: initial;
-
-        &:checked {
-            background-color: var(--blogtube_primary_color);
-            box-shadow:  0 0 0px 1000px var(--blogtube_primary_color) inset;
-        }
-    }
 }
 
 .wp-polls .Buttons {

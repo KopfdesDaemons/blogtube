@@ -21,6 +21,7 @@
 
         ?>
         <header id="blogtube_header">
+        <a href="#blogtube_main_content" class="blogtube_skip_link"><?php echo esc_html__('Skip to main content', 'blog-layouts') ?></a>
             <div id="blogtube_sidemenu_toggle" tabindex="1">
                 <i class="fa-solid fa-bars"></i>
             </div>

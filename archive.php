@@ -1,23 +1,6 @@
 <?php
     get_header();
     include_once get_template_directory() . '/template-parts/sidemenu.php';
-
-    $blogtube_archive_title = esc_html__('Archive', 'blogtube');
-    if (is_author()) {
-        $blogtube_archive_title = get_the_author();
-    } elseif (is_tag()) {
-        $blogtube_archive_title = single_tag_title('', false);
-    } elseif (is_category()) {
-        $blogtube_archive_title = single_cat_title('', false);
-    } elseif (is_date()) {
-        if (is_day()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date();
-        } elseif (is_month()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('F Y');
-        } elseif (is_year()) {
-            $blogtube_archive_title = esc_html__('Archive for', 'blogtube') . ' ' . get_the_date('Y');
-        }
-    }
 ?>
 
 <!-- author header -->

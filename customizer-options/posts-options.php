@@ -109,8 +109,8 @@ function blogtube_custom_posts($wp_customize)
         'section' => 'custom_theme_article',
         'label' => __('Date format', 'blogtube'),
         'choices' => [
-            'span' => 'span',
-            'date' => 'date'
+            'span' => __('span', 'blogtube'),
+            'date' => __('date', 'blogtube')
         ],
         'active_callback' => 'post_date_active_callback',
     ));

@@ -50,16 +50,15 @@ $font-size: clamp(12px, 1.5vw, 16px);
     border-radius: 4px;
     padding: 0.5em 0.8em;
     background-color: rgb(41, 41, 41);
-    border: solid 1px gray;
     white-space: nowrap;
     user-select: none;
+    border: solid 1px transparent;
 }
 
 // pagination current page
 #blogtube_main_content .wp-polls-paging .current,
 .current {
-    // background-color: var(--blogtube_primary_color);
-    border: solid 1px transparent;
+    border: solid 1px gray;
     color: var(--blogtube_font_color);
 }
 
