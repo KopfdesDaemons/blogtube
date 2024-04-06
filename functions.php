@@ -113,9 +113,9 @@ class blogtube_menu_walker extends Walker_Nav_Menu
 // customizer settings
 $blogtube_customizer_options = [
     'global-options.php',
+    'posts-options.php',
     // 'header-options.php',
     // 'feed-options.php',
-    // 'posts-options.php',
     // 'pages-options.php',
     // 'author-page-options.php',
 ];
