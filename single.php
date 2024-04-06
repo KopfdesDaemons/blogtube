@@ -29,6 +29,11 @@ while (have_posts()) :
 
                 // Calculate the difference between the current time and the post time
                 $blogtube_time_difference = human_time_diff($blogtube_post_time, $blogtube_current_time);
+
+                $blogtube_date_format = sprintf(__('%s ago', 'blogtube'), $blogtube_time_difference);
+                if(get_theme_mod('posts_date_format', 'span') === 'date') $blogtube_date_format = get_the_date();
+
+
                 ?>
                 <div class="blogtube_hero_author_row">
                     <?php if (get_theme_mod('post_author', true)) { ?>
@@ -41,7 +46,7 @@ while (have_posts()) :
                             <a href="<?php echo esc_url(get_author_posts_url($blogtube_author_id)); ?>"><?php echo $blogtube_author_name; ?></a>
                         <?php } ?>
                         <?php if (get_theme_mod('post_date', true)) { ?>
-                            <span class="blogtube_date"><?php printf(__('%s ago', 'blogtube'), $blogtube_time_difference); ?></span>
+                            <span class="blogtube_date"><?php echo esc_html($blogtube_date_format); ?></span>
                         <?php } ?>
                     </div>
                 </div>

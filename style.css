@@ -586,13 +586,16 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .page-template-default main {
   margin-top: 0;
   padding-left: clamp(0em, 2vw, 1.2em);
-  max-width: 100em;
-  max-width: 90em;
+  max-width: var(--blogtube_maximum_width_of_pages);
 }
 @media only screen and (min-width: 1000px) {
   .page-template-default main {
     min-width: unset;
   }
+}
+.page-template-default main .blogtube_user_content_container {
+  border-radius: 12px;
+  background-color: var(--blogtube_background_color_pages);
 }
 
 /*

@@ -35,5 +35,6 @@
         </div>
     </section>
 </main>
-<aside id="blogtube_sidebar"><?php get_sidebar(); ?></aside>
-<?php get_footer(); ?>
+<?php if(get_theme_mod('pages_sidebar', true)) { ?>
+    <aside id="blogtube_sidebar"><?php get_sidebar(); ?></aside>
+<?php } get_footer(); ?>

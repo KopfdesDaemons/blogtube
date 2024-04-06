@@ -91,6 +91,30 @@ function blogtube_custom_posts($wp_customize)
         'section' => 'custom_theme_article',
     ));
 
+    
+    function post_date_active_callback($control)
+    {
+        return $control->manager->get_setting('post_date')->value();
+    }
+
+    // Date format
+    $wp_customize->add_setting('posts_date_format', array(
+        'default' => 'span',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('posts_date_format', array(
+        'type' => 'select',
+        'section' => 'custom_theme_article',
+        'label' => __('Date format', 'blogtube'),
+        'choices' => [
+            'span' => 'span',
+            'date' => 'date'
+        ],
+        'active_callback' => 'post_date_active_callback',
+    ));
+
     // Categories
     $wp_customize->add_setting('post_categories', array(
         'default' => true,

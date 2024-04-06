@@ -56,6 +56,8 @@
         --blogtube_body_font: <?php echo esc_attr(get_theme_mod('body_font', 'Roboto,Arial,sans-serif')); ?>;
         --blogtube_body_background_color: <?php echo esc_attr(get_theme_mod('body_background_color', '#0f0f0f')); ?>;
         --blogtube_maximum_width_of_posts: <?php echo esc_attr(get_theme_mod('maximum_width_of_posts', '90') . 'em'); ?>;
+        --blogtube_maximum_width_of_pages: <?php echo esc_attr(get_theme_mod('maximum_width_of_pages', '90') . 'em'); ?>;
         --blogtube_background_color_posts: <?php echo esc_attr(get_theme_mod('background_color_posts', '')); ?>;
+        --blogtube_background_color_pages: <?php echo esc_attr(get_theme_mod('background_color_pages', '')); ?>;
     }
 </style>
