@@ -56,7 +56,7 @@
     }
 }
 
-.wp-block-post-navigation-link {
+.wp-block-post-navigation-link a{
     @include color_button;
     margin: 0.5em 0;
 }
@@ -446,14 +446,10 @@ blockquote {
 .wp-block-post-template {
     li {
         max-width: 65em;
-        background-color: black;
+        background-color: rgb(41, 41, 41);
         border-radius: 12px;
         margin-bottom: 3em;
         padding: 1em;
-
-        &:hover {
-            outline: 2px solid var(--blogtube_primary_color);
-        }
     }
 }
 

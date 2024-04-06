@@ -1,0 +1,92 @@
+/*
+    For WP-Polls plugin
+*/
+
+@use 'mixins' as *;
+
+.page p:has(+ .wp-polls-archive) {
+    code {
+        display: none;
+    }
+}
+
+.wp-polls-archive {
+
+    h1+p code {
+        background-color: unset;
+    }
+
+    &>code {
+        font-family: inherit;
+        background-color: unset;
+        padding: 0;
+    }
+
+    .wp-polls-ans {
+        background-color: var(--blogtube_primary_variant_darker);
+        padding: 1em;
+        border-radius: 12px;
+        width: auto;
+
+        // Dates
+        &+p {
+            font-size: 0.8em;
+            margin: 0 0 3em 0;
+            background-color: var(--blogtube_tag_color);
+            padding: 0.5em;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin: 0.5em 0;
+            }
+        }
+    }
+
+    // Pagination
+    &+ code {
+        background-color: unset;
+    }
+}
+
+.widget_polls-widget {
+    ul {
+        padding: 1em;
+        background-color: rgb(41, 41, 41);
+        border-radius: 12px;
+
+        li {
+            list-style: none;
+            margin: 0.5em 0;
+        }
+    }
+
+    .wp-polls-loading {
+        display: none;
+    }
+
+    .wp-polls-ul input {
+        background-color: var(--blogtube_primary_variant_darker);
+        box-shadow: initial;
+
+        &:checked {
+            background-color: var(--blogtube_primary_color);
+            box-shadow:  0 0 0px 1000px var(--blogtube_primary_color) inset;
+        }
+    }
+}
+
+.wp-polls .Buttons {
+    @include color_button;
+    border: none;
+    display: initial;
+
+    :hover {
+        box-shadow: none;
+        cursor: pointer;
+        background-color: var(--blogtube_primary_color);
+    }
+}

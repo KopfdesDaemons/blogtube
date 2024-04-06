@@ -27,7 +27,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @use 'scss/single' as *;
 @use 'scss/wp-block' as *;
 @use 'scss/sidebar' as *;
-// @use 'scss/polls-css' as *;
+@use 'scss/polls-css' as *;
 
 html {
     scrollbar-color: hsl(0,0%,67%) transparent;
@@ -232,7 +232,7 @@ hr {
     width: 70%;
 }
 
-input:not([type="submit"], [type="checkbox"]),
+input:not([type="submit"], [type="button"], [type="checkbox"]),
 textarea,
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -249,7 +249,7 @@ textarea:-webkit-autofill:focus {
     outline: none;
 }
 
-input:not([type="submit"], [type="checkbox"]), textarea {
+input:not([type="submit"], [type="button"], [type="checkbox"]), textarea {
     border-radius: 4px 4px 0 0;
     padding: 1em 0.5em;
 

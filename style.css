@@ -641,7 +641,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .page-numbers {
   border-radius: 4px;
   padding: 0.5em 0.8em;
-  background-color: black;
+  background-color: rgb(41, 41, 41);
   border: solid 1px gray;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -942,7 +942,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   color: var(--blogtube_font_color);
 }
 
-.wp-block-post-navigation-link {
+.wp-block-post-navigation-link a {
   padding: 0.8em;
   border-radius: 5em;
   background-color: var(--blogtube_primary_color);
@@ -952,10 +952,10 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   cursor: pointer;
   margin: 0.5em 0;
 }
-.wp-block-post-navigation-link:hover {
+.wp-block-post-navigation-link a:hover {
   background-color: rgb(41, 41, 41);
 }
-.wp-block-post-navigation-link a {
+.wp-block-post-navigation-link a a {
   color: var(--blogtube_font_color);
   text-decoration: none;
 }
@@ -1338,13 +1338,10 @@ blockquote {
 
 .wp-block-post-template li {
   max-width: 65em;
-  background-color: black;
+  background-color: rgb(41, 41, 41);
   border-radius: 12px;
   margin-bottom: 3em;
   padding: 1em;
-}
-.wp-block-post-template li:hover {
-  outline: 2px solid var(--blogtube_primary_color);
 }
 
 .wp-block-rss {
@@ -1408,6 +1405,89 @@ blockquote {
     max-width: 100%;
     padding: 0;
   }
+}
+
+/*
+    For WP-Polls plugin
+*/
+.page p:has(+ .wp-polls-archive) code {
+  display: none;
+}
+
+.wp-polls-archive h1 + p code {
+  background-color: unset;
+}
+.wp-polls-archive > code {
+  font-family: inherit;
+  background-color: unset;
+  padding: 0;
+}
+.wp-polls-archive .wp-polls-ans {
+  background-color: var(--blogtube_primary_variant_darker);
+  padding: 1em;
+  border-radius: 12px;
+  width: auto;
+}
+.wp-polls-archive .wp-polls-ans + p {
+  font-size: 0.8em;
+  margin: 0 0 3em 0;
+  background-color: var(--blogtube_tag_color);
+  padding: 0.5em;
+}
+.wp-polls-archive .wp-polls-ans ul {
+  padding: 0;
+}
+.wp-polls-archive .wp-polls-ans ul li {
+  list-style: none;
+  margin: 0.5em 0;
+}
+.wp-polls-archive + code {
+  background-color: unset;
+}
+
+.widget_polls-widget ul {
+  padding: 1em;
+  background-color: rgb(41, 41, 41);
+  border-radius: 12px;
+}
+.widget_polls-widget ul li {
+  list-style: none;
+  margin: 0.5em 0;
+}
+.widget_polls-widget .wp-polls-loading {
+  display: none;
+}
+.widget_polls-widget .wp-polls-ul input {
+  background-color: var(--blogtube_primary_variant_darker);
+  box-shadow: initial;
+}
+.widget_polls-widget .wp-polls-ul input:checked {
+  background-color: var(--blogtube_primary_color);
+  box-shadow: 0 0 0px 1000px var(--blogtube_primary_color) inset;
+}
+
+.wp-polls .Buttons {
+  padding: 0.8em;
+  border-radius: 5em;
+  background-color: var(--blogtube_primary_color);
+  text-decoration: none;
+  display: flex;
+  color: black;
+  cursor: pointer;
+  border: none;
+  display: initial;
+}
+.wp-polls .Buttons:hover {
+  background-color: rgb(41, 41, 41);
+}
+.wp-polls .Buttons a {
+  color: var(--blogtube_font_color);
+  text-decoration: none;
+}
+.wp-polls .Buttons :hover {
+  box-shadow: none;
+  cursor: pointer;
+  background-color: var(--blogtube_primary_color);
 }
 
 html {
@@ -1596,7 +1676,7 @@ hr {
   width: 70%;
 }
 
-input:not([type=submit], [type=checkbox]),
+input:not([type=submit], [type=button], [type=checkbox]),
 textarea,
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -1613,14 +1693,14 @@ textarea:-webkit-autofill:focus {
   outline: none;
 }
 
-input:not([type=submit], [type=checkbox]), textarea {
+input:not([type=submit], [type=button], [type=checkbox]), textarea {
   border-radius: 4px 4px 0 0;
   padding: 1em 0.5em;
 }
-input:not([type=submit], [type=checkbox]):focus, textarea:focus {
+input:not([type=submit], [type=button], [type=checkbox]):focus, textarea:focus {
   border-bottom: 1px solid var(--blogtube_primary_color);
 }
-input:not([type=submit], [type=checkbox]):hover, textarea:hover {
+input:not([type=submit], [type=button], [type=checkbox]):hover, textarea:hover {
   background-color: #141414;
   box-shadow: 0 0 0px 1000px #141414 inset;
 }
