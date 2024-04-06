@@ -4,12 +4,12 @@ Theme Name: Blogtube
 Author: Rico
 Author URI: https://ricoswebsite.com/
 Text Domain: blogtube
-Description: Blogtube is a modern theme for blogs. A core feature is swapping layouts. The primary color is customizable. It has a tidy, wide layout with a sidebar, which is right at the edge and doesn't get in the way. The author page is particularly extensive. There is a landing page with a widget area.
-Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Version: 1.0.4
+Description: This theme is designed for blogs. Blogtube is a theme inspired by a well-known video platform. It has an infinite scroll function.
+Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Version: 1.0.0
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 6.2
+Tested up to: 8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */

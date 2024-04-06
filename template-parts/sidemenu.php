@@ -6,7 +6,7 @@
                 <li>
                     <a href="/">
                         <i class="fa-solid fa-house"></i>
-                        <span> <?php echo esc_html__('Startpage', 'blottube') ?></span>
+                        <span> <?php echo esc_html__('Startpage', 'blogtube') ?></span>
                     </a>
                 </li>
             </ul>

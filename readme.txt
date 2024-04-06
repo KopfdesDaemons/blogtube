@@ -1,18 +1,15 @@
 === Blogtube ===
 Contributors: Rico
-Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 6.4
+Tested up to: 8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Blogtube is a modern theme for blogs. A core feature is swapping layouts. 
-The primary color is customizable. It has a tidy, wide layout with a sidebar,
-which is right at the edge and doesn't get in the way. The author page is
-particularly extensive. There is a landing page with a widget area.
+This theme is designed for blogs. Blogtube is a theme inspired by a well-known video platform. It has an infinite scroll function.
 
 == Installation ==
 
@@ -24,24 +21,6 @@ particularly extensive. There is a landing page with a widget area.
 6. Activate the Blogtube theme once the installation is complete.
 
 == Changelog ==
-
-    = 1.0.4 =
-        - Copyright information improved
-        - Customizer Select Choices made translatable
-        - "Tested up to" updated
-
-    = 1.0.3 =
-        - prefixes for variables
-        - customizer-options escaped 
-        - header meta tags removed
-        - new screenshot
-        - fix overlapping with the wp admin bar
-
-    = 1.0.2 =
-        - Fix PHP error "undefined variable"
-
-    = 1.0.1 =
-        - Fix PHP error "undefined variable"
 
     = 1.0.0 =
         - Initial release
@@ -73,5 +52,5 @@ particularly extensive. There is a landing page with a widget area.
     Source: https://fontawesome.com/start
 
 
-Blogtube WordPress Theme, Copyright 2023 Rico Angenvoort
+Blogtube WordPress Theme, Copyright 2024 Rico Angenvoort
 Blogtube is distributed under the terms of the GNU GPL
