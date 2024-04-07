@@ -1,6 +1,6 @@
 # Wordpress theme
 
-Blogtube is a WordPress theme that is based on the design scheme of YouTube. It is designed for blog posts.
+BlogTube is a WordPress theme that is based on the design scheme of YouTube. It is designed for blog posts.
 
 ## Features
 
@@ -8,5 +8,6 @@ Blogtube is a WordPress theme that is based on the design scheme of YouTube. It 
 - custom sidemenu
 - custom primary color
 - custom font
+
 
 ![Preview](/screenshot.jpg)

@@ -10,6 +10,19 @@
     top: 0;
     left: 0;
     padding-right: 1em;
+
+    .blotube_name {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: var(--blogtube_font_color);
+        font-weight: 800;
+
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+    }
 }
 
 body.admin-bar #blogtube_header{

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: Blogtube
+Theme Name: BlogTube
 Author: Rico
 Author URI: https://ricoswebsite.com/
 Text Domain: blogtube
@@ -335,6 +335,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   left: 0;
   padding-right: 1em;
 }
+#blogtube_header .blotube_name {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--blogtube_font_color);
+  font-weight: 800;
+}
+@media only screen and (max-width: 800px) {
+  #blogtube_header .blotube_name {
+    display: none;
+  }
+}
 
 body.admin-bar #blogtube_header {
   margin-top: 32px;
@@ -460,8 +473,7 @@ body.admin-bar #blogtube_header {
   justify-content: space-between;
   box-sizing: border-box;
   height: 100dvh;
-  padding: var(--wp-admin--admin-bar--height, 0px) 1em 0 1em;
-  padding: 3em 1em 0 1em;
+  padding: 3.5em 1em 0 1em;
 }
 #blogtube_sidemenu:hover {
   scrollbar-color: #717171 transparent;
@@ -779,6 +791,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .single .blogtube_user_content_container {
   background-color: var(--blogtube_background_color_posts);
   border-radius: 12px;
+  line-height: 1.5em;
 }
 .single .blogtube_post_footer {
   width: 100%;

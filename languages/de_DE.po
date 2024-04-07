@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-04-06 22:53+0200\n"
-"PO-Revision-Date: 2024-04-06 22:53+0200\n"
+"POT-Creation-Date: 2024-04-07 16:07+0200\n"
+"PO-Revision-Date: 2024-04-07 16:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: gettext;gettext_noop;__;_e;esc_html__;esc_html_e;X-"
-"Generator: Poedit 3.0.1\n"
+"Generator: Poedit 3.0.1;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:8
@@ -178,6 +178,10 @@ msgstr "Springe zum Hauptinhalt"
 #: index.php:23 page.php:19 single.php:82
 msgid "Pages:"
 msgstr "Seiten:"
+
+#: searchform.php:5
+msgid "Search"
+msgstr "Suche"
 
 #: sidebar.php:6
 msgid "Fill the sidebar in the customizer"

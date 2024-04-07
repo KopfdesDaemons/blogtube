@@ -4,7 +4,7 @@
         <nav>
             <ul class="blogtube_sidebar_mainmenu">
                 <li>
-                    <a href="/">
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
                         <i class="fa-solid fa-house"></i>
                         <span> <?php echo esc_html__('Startpage', 'blogtube') ?></span>
                     </a>
@@ -26,14 +26,14 @@
             ?>
         </nav>
         <?php
-        if(has_nav_menu('legal links')){
+        if (has_nav_menu('legal links')) {
             wp_nav_menu(array(
                 'theme_location' => 'legal links',
                 'menu_class' => 'blogtube_sidebar_lagal_links',
                 'container'      => false,
             ));
         }
-            ?>
+        ?>
         <div class="blogtube_theme_info">
             <div>
                 <a href="https://wordpress.org/themes/blogtube/" target="_blank">Blogtube WordPress Theme</a>
@@ -44,6 +44,6 @@
                 );
                 ?>
             </div>
-    </div>
+        </div>
     </div>
 </aside>
