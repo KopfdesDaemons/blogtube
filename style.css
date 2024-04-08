@@ -607,6 +607,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .page-template-default main .blogtube_user_content_container {
   border-radius: 12px;
+  line-height: 1.8em;
   background-color: var(--blogtube_background_color_pages);
 }
 
@@ -791,7 +792,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .single .blogtube_user_content_container {
   background-color: var(--blogtube_background_color_posts);
   border-radius: 12px;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 .single .blogtube_post_footer {
   width: 100%;
@@ -1024,6 +1025,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   display: block;
   overflow-x: auto;
   color: rgb(151, 151, 151);
+  width: auto;
 }
 .wp-block-table table thead tr {
   background-color: transparent;
@@ -1033,8 +1035,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 .wp-block-table td {
   padding: 0.5em 0.5em;
   color: var(--blogtube_font_color);
-  border-color: #555;
-  border: 1px solid;
+  border-color: #313131;
 }
 .wp-block-table thead {
   border-bottom: 2px solid;
@@ -1043,20 +1044,19 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
   border-top: 2px solid;
 }
 .wp-block-table th {
-  background-color: black;
+  background-color: #28282d;
 }
 .wp-block-table tr {
-  background-color: #1d2027;
   transition: all 400ms;
 }
 .wp-block-table.is-style-stripes {
   border-bottom: none;
 }
-.wp-block-table.is-style-stripes th {
-  background-color: transparent;
+.wp-block-table.is-style-stripes thead {
+  border-bottom: none;
 }
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background-color: rgba(43, 45, 48, 0);
+  background-color: rgb(24, 24, 24);
 }
 
 .wp-block-button a {

@@ -108,6 +108,7 @@
         display: block;
         overflow-x: auto;
         color: rgb(151, 151, 151);
+        width: auto;
     }
 
     table thead tr {
@@ -119,8 +120,7 @@
     td {
         padding: 0.5em 0.5em;
         color: var(--blogtube_font_color);
-        border-color: #555;
-        border: 1px solid;
+        border-color: #313131;
     }
 
     thead {
@@ -132,11 +132,10 @@
     }
 
     th {
-        background-color: black;
+        background-color: #28282d;
     }
 
     tr {
-        background-color: #1d2027;
         transition: all 400ms;
     }
 
@@ -144,12 +143,12 @@
     &.is-style-stripes {
         border-bottom: none;
 
-        th {
-            background-color: transparent;
+        thead {
+            border-bottom: none;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgba(43, 45, 48, 0);
+            background-color: rgb(24, 24, 24);
         }
     }
 }
