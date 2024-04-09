@@ -24,7 +24,7 @@
             }
             wp_reset_postdata();
         } else {
-            echo '<span>' . esc_html__('No posts found.', 'blogtube') . '</span>';
+            echo '<span class="blogtube_no_post_found">' . esc_html__('No posts found.', 'blogtube') . '</span>';
         }
         ?>
     </section>

@@ -102,53 +102,72 @@
 // table
 .wp-block-table {
     table {
-        border-collapse: collapse;
         margin-top: 25px;
         font-size: clamp(0.8em, 2vw, 1em);
-        display: block;
-        overflow-x: auto;
-        color: rgb(151, 151, 151);
         width: auto;
+        border-collapse: separate;
+        border-spacing: 0;
     }
 
+    tbody {
+        background-color: #1a1a1b;
+    }
+    
     table thead tr {
         background-color: transparent;
         text-align: left;
     }
 
+    thead tr {
+        &:first-of-type :first-child {
+            border-radius: 12px 0 0 0;
+        }
+
+        &:first-of-type :last-child {
+            border-radius: 0 12px 0 0;
+        }
+    }
+    
     th,
     td {
-        padding: 0.5em 0.5em;
+        padding: 0.8em 0.8em;
+        border: none;
         color: var(--blogtube_font_color);
-        border-color: #313131;
     }
 
-    thead {
-        border-bottom: 2px solid;
-    }
-
-    tfoot {
-        border-top: 2px solid;
+    tfoot td{
+        border-top: 1px solid var(--blogtube_primary_color);
     }
 
     th {
         background-color: #28282d;
+        border-bottom: 1px solid;
+        color: var(--blogtube_primary_color);
     }
 
     tr {
-        transition: all 400ms;
+        transition: all 200ms;
+        
+        &:hover {
+            background-color: rgb(54, 54, 58);
+        }
     }
 
     // table with stripes
     &.is-style-stripes {
         border-bottom: none;
 
-        thead {
-            border-bottom: none;
+        th {
+            background-color: #28282d;
+            border-bottom: 1px solid;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgb(24, 24, 24);
+            background-color: var(--blogtube_primary_variant_darker);
+
+            &:hover {
+                background-color: rgb(54, 54, 58);
+            }
         }
     }
 }

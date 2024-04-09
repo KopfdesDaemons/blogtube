@@ -1,9 +1,8 @@
 var canLoad = true;
-var page = 2; // Initial page number
-var allResultsLoaded = false; // Variable, um den Status der Suchergebnisse zu verfolgen
+var page = 2;
+var allResultsLoaded = false;
 
 window.addEventListener('scroll', function() {
-    // Überprüfen, ob das Laden möglich ist und ob nicht alle Suchergebnisse bereits geladen wurden
     if (canLoad && !allResultsLoaded && window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
         canLoad = false;
 
@@ -18,7 +17,6 @@ window.addEventListener('scroll', function() {
                     document.getElementById('blogtube_main_content').insertAdjacentHTML('beforeend', xhr.responseText);
                     page++;
                 } else {
-                    // Alle Suchergebnisse wurden geladen
                     allResultsLoaded = true;
                 }
             }

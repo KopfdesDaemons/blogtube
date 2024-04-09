@@ -41,7 +41,7 @@ function blogtube_enqueue_scripts()
     wp_enqueue_script('blogtube_sidemenu_script', get_template_directory_uri() . '/js/blogtube_sidemenu.js', null, '1.0', true);
 
     // Infinitiyscroll Script
-    if(is_home() || is_search()){
+    if(is_home() & have_posts()|| is_search() & have_posts() || is_archive() & have_posts() ){
         wp_enqueue_script('blogtube_infinityscroll_script', get_template_directory_uri() . '/js/blogtube_infinityscroll.js', null, '1.0', true);
        
         // Pass the Ajax URL to script.js
@@ -115,9 +115,6 @@ $blogtube_customizer_options = [
     'global-options.php',
     'posts-options.php',
     'pages-options.php',
-    // 'header-options.php',
-    // 'feed-options.php',
-    // 'author-page-options.php',
 ];
 
 foreach ($blogtube_customizer_options as $option) {

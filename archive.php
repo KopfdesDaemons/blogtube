@@ -36,7 +36,7 @@
 <?php } ?>
 
 <main role="main">
-    <section class="blogtube_content_spacer blogtube_content_spacer_feed blogtube_content_and_sidebar_grid">
+    <section class="blogtube_content_spacer blogtube_content_spacer_feed blogtube_content_and_sidebar_grid" id="blogtube_main_content">
         <?php
         global $wp_query;
         $wp_query->set('paged', 1);
