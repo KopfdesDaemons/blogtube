@@ -128,7 +128,7 @@ function blogtube_sanitize_checkbox($input)
 }
 
 // Infinityscroll
-function load_posts()
+function blogtube_load_posts()
 {
     $page = $_POST['page'];
     $blogtube_posts_per_page = get_option('posts_per_page');
@@ -149,11 +149,11 @@ function load_posts()
         }
         wp_reset_postdata();
     } else {
-        echo 'NoMorePosts'; // Signal when there are no more posts to load
+        echo ''; // Signal when there are no more posts to load
     }
 
     die();
 }
 
-add_action('wp_ajax_load_posts', 'load_posts');
-add_action('wp_ajax_nopriv_load_posts', 'load_posts');
+add_action('wp_ajax_load_posts', 'blogtube_load_posts');
+add_action('wp_ajax_nopriv_load_posts', 'blogtube_load_posts');

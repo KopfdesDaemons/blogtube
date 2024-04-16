@@ -6,7 +6,7 @@ Author URI: https://ricoswebsite.com/
 Text Domain: blogtube
 Description: This theme is designed for blogs. Blogtube is a theme inspired by a well-known video platform. It has an infinite scroll function.
 Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 8.1
@@ -335,7 +335,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   left: 0;
   padding-right: 1em;
 }
-#blogtube_header .blotube_name {
+#blogtube_header .blogtube_name {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -344,7 +344,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-weight: 800;
 }
 @media only screen and (max-width: 800px) {
-  #blogtube_header .blotube_name {
+  #blogtube_header .blogtube_name {
     display: none;
   }
 }

@@ -13,7 +13,7 @@ window.addEventListener('scroll', function() {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 canLoad = true;
-                if (xhr.responseText.trim() !== 'NoMorePosts') {
+                if (xhr.responseText.trim()) { // Check that the content is not empty
                     document.getElementById('blogtube_main_content').insertAdjacentHTML('beforeend', xhr.responseText);
                     page++;
                 } else {

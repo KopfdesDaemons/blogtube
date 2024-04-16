@@ -34,6 +34,6 @@
         }
         
         ?>
-        <a class="blotube_name" href="<?php echo $home_url ?>"><?php echo get_bloginfo( 'name' );?></a>
+        <a class="blogtube_name" href="<?php echo $home_url ?>"><?php echo get_bloginfo( 'name' );?></a>
         <?php get_search_form() ?>
     </header>

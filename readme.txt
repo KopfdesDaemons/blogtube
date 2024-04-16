@@ -22,6 +22,11 @@ This theme is designed for blogs. BlogTube is a theme inspired by a well-known v
 
 == Changelog ==
 
+    = 1.0.1 =
+        - load_posts() function
+            - prefix
+            - response without words if no posts can be loaded
+
     = 1.0.0 =
         - Initial release
 
