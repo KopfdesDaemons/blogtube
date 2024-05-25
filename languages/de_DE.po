@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-04-07 16:07+0200\n"
-"PO-Revision-Date: 2024-04-07 16:07+0200\n"
+"POT-Creation-Date: 2024-05-25 13:32+0200\n"
+"PO-Revision-Date: 2024-05-25 13:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -36,7 +36,7 @@ msgstr "Gehe zur Startseite"
 msgid "Posts"
 msgstr "Beiträge"
 
-#: archive.php:52 home.php:25 search.php:27
+#: archive.php:52 home.php:34 search.php:27
 msgid "No posts found."
 msgstr "Keine Beiträge gefunden."
 
@@ -160,16 +160,28 @@ msgid "Show post pagination"
 msgstr "Zeige Pagination"
 
 #: functions.php:73
+#, fuzzy
+#| msgid "Sidemenu"
 msgid "Sidemenu"
 msgstr "Sidemenu"
 
 #: functions.php:74
-msgid "legal links"
+#, fuzzy
+#| msgid "legal links"
+msgid "Legal links"
 msgstr "Legal Links"
 
-#: functions.php:83
+#: functions.php:75
+msgid "Chips above the feed"
+msgstr "Chips über dem Feed"
+
+#: functions.php:84
 msgid "Sidebar"
 msgstr "Sidebar"
+
+#: functions.php:92
+msgid "Widget area above feed"
+msgstr "Widget area über dem Feed"
 
 #: header.php:24
 msgid "Skip to main content"

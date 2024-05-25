@@ -2,10 +2,11 @@
 Theme Name: BlogTube
 Author: Rico
 Author URI: https://ricoswebsite.com/
+Theme URI: https://ricoswebsite.com/en/blogpost/blogtube
 Text Domain: blogtube
 Description: This theme is designed for blogs. Blogtube is a theme inspired by a well-known video platform. It has an infinite scroll function.
 Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Version: 1.0.1
+Version: 1.1.0
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 8.1
@@ -30,8 +31,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @use 'scss/polls-css' as *;
 
 html {
-    scrollbar-color: hsl(0,0%,67%) transparent;
+    scrollbar-color: hsl(0, 0%, 67%) transparent;
     font-size: 10px;
+    color: var(--blogtube_font_color);
 }
 
 body {
@@ -87,33 +89,14 @@ h6 {
     word-wrap: break-word;
     overflow-wrap: anywhere;
     margin: 0.2em 0;
-    color: var(--blogtube_font_color);
 }
 
-p,
-span,
-cite,
-pre,
-blockquote,
-figure,
-dd,
-address,
-table,
-label,
-div,
-aside,
-li,
 button {
     color: var(--blogtube_font_color);
 }
 
 a {
     color: var(--blogtube_primary_color);
-}
-
-.home main .blogtube_content_spacer {
-    max-width: unset;
-    width: unset;
 }
 
 .blogtube_content_spacer {
@@ -250,7 +233,8 @@ textarea:-webkit-autofill:focus {
     outline: none;
 }
 
-input:not([type="submit"], [type="radio"], [type="button"], [type="checkbox"]), textarea {
+input:not([type="submit"], [type="radio"], [type="button"], [type="checkbox"]),
+textarea {
     border-radius: 4px 4px 0 0;
     padding: 1em 0.5em;
 
@@ -350,21 +334,23 @@ select {
     margin: 0 1em;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 1.5em 1em;
     flex-wrap: wrap;
     flex: 1 0 auto;
     gap: 1em;
 
-    p, span, div {
+    p,
+    span,
+    div {
         color: var(--blogtube_font_color);
         font-size: 1.2rem;
     }
-    
+
     a {
         text-decoration: none;
         color: var(--blogtube_font_color);
-        
+
         h2 {
             font-weight: 400;
             margin-top: 0;
@@ -385,7 +371,7 @@ select {
         gap: 0.5em;
         font-size: 2rem;
         font-weight: 700;
-        
+
         img {
             border-radius: 5em
         }
@@ -420,14 +406,46 @@ select {
 }
 
 .home {
+
+    .widget {
+        font-size: 1.4rem;
+    }
+
     .blogtube_sticky_post {
         h2 {
             color: var(--blogtube_primary_color);
         }
-    
+
         background-color:var(--blogtube_primary_variant_darker);
         border-radius: 2em;
         border: none;
+    }
+
+    .blogtube_chipmenu {
+        display: flex;
+        padding: 0;
+        gap: 0.5em;
+        padding: 0.5em;
+        overflow-x: auto;
+        max-width: 100em;
+        flex-wrap: wrap;
+        scrollbar-width: none;
+
+        @media only screen and (max-width: 800px) {
+            flex-wrap: nowrap;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        li {
+            @include tag;
+
+            ul {
+                display: none;
+            }
+        }
     }
 }
 
@@ -435,7 +453,7 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     p {
         display: flex;
         justify-content: center;
@@ -443,7 +461,7 @@ select {
         flex-wrap: wrap;
         gap: 0.5em;
         margin-bottom: 4em;
-        
+
         &:first-of-type {
             padding: 1em;
             border-radius: 12px;

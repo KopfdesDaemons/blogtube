@@ -41,3 +41,28 @@
     white-space: nowrap;
     user-select: none;
 }
+
+@mixin tag {
+    height: 32px;
+    border-radius: 8px;
+    background-color: #ffffff1a;
+    display: flex;
+    align-items: stretch;
+    transition: background-color .5s cubic-bezier(.05, 0, 0, 1);
+
+    a {
+        color: var(--blogtube_font_color);
+        min-width: 12px;
+        text-decoration: none;
+        padding: 0 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 1.4rem;
+    }
+
+    &:hover {
+        background-color: #ffffff33;
+    }
+}

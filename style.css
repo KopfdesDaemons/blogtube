@@ -3,10 +3,11 @@
 Theme Name: BlogTube
 Author: Rico
 Author URI: https://ricoswebsite.com/
+Theme URI: https://ricoswebsite.com/en/blogpost/blogtube
 Text Domain: blogtube
 Description: This theme is designed for blogs. Blogtube is a theme inspired by a well-known video platform. It has an infinite scroll function.
 Tags: blog, one-column, two-columns, right-sidebar, custom-colors, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Version: 1.0.1
+Version: 1.1.0
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 8.1
@@ -815,7 +816,6 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_post_tags ul li {
   height: 32px;
-  min-width: 12px;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.1019607843);
   display: flex;
@@ -824,11 +824,14 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .single .blogtube_post_tags ul li a {
   color: var(--blogtube_font_color);
+  min-width: 12px;
   text-decoration: none;
   padding: 0 12px;
   font-weight: 500;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  font-size: 1.4rem;
 }
 .single .blogtube_post_tags ul li:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -915,6 +918,7 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 
 .widget {
   padding: 1em;
+  text-wrap: pretty;
 }
 .widget p {
   overflow-wrap: anywhere;
@@ -930,6 +934,10 @@ body.admin-bar #blogtube_sidemenu .blogtube_sidebar_content {
 }
 .widget img {
   height: auto;
+}
+
+.widget_text p {
+  margin: 0;
 }
 
 .wp-block-post-author {
@@ -1166,7 +1174,8 @@ blockquote {
   justify-content: center;
   margin: 0.5em 0;
 }
-.wp-block-loginout a, .wp-block-loginout input[type=submit] {
+.wp-block-loginout a,
+.wp-block-loginout input[type=submit] {
   padding: 0.8em;
   border-radius: 5em;
   background-color: var(--blogtube_primary_color);
@@ -1176,10 +1185,12 @@ blockquote {
   cursor: pointer;
   border: none;
 }
-.wp-block-loginout a:hover, .wp-block-loginout input[type=submit]:hover {
+.wp-block-loginout a:hover,
+.wp-block-loginout input[type=submit]:hover {
   background-color: rgb(41, 41, 41);
 }
-.wp-block-loginout a a, .wp-block-loginout input[type=submit] a {
+.wp-block-loginout a a,
+.wp-block-loginout input[type=submit] a {
   color: var(--blogtube_font_color);
   text-decoration: none;
 }
@@ -1516,6 +1527,7 @@ blockquote {
 html {
   scrollbar-color: hsl(0, 0%, 67%) transparent;
   font-size: 10px;
+  color: var(--blogtube_font_color);
 }
 
 body {
@@ -1569,33 +1581,14 @@ h6 {
   word-wrap: break-word;
   overflow-wrap: anywhere;
   margin: 0.2em 0;
-  color: var(--blogtube_font_color);
 }
 
-p,
-span,
-cite,
-pre,
-blockquote,
-figure,
-dd,
-address,
-table,
-label,
-div,
-aside,
-li,
 button {
   color: var(--blogtube_font_color);
 }
 
 a {
   color: var(--blogtube_primary_color);
-}
-
-.home main .blogtube_content_spacer {
-  max-width: unset;
-  width: unset;
 }
 
 .blogtube_content_spacer {
@@ -1717,14 +1710,17 @@ textarea:-webkit-autofill:focus {
   outline: none;
 }
 
-input:not([type=submit], [type=radio], [type=button], [type=checkbox]), textarea {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]),
+textarea {
   border-radius: 4px 4px 0 0;
   padding: 1em 0.5em;
 }
-input:not([type=submit], [type=radio], [type=button], [type=checkbox]):focus, textarea:focus {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]):focus,
+textarea:focus {
   border-bottom: 1px solid var(--blogtube_primary_color);
 }
-input:not([type=submit], [type=radio], [type=button], [type=checkbox]):hover, textarea:hover {
+input:not([type=submit], [type=radio], [type=button], [type=checkbox]):hover,
+textarea:hover {
   background-color: #141414;
   box-shadow: 0 0 0px 1000px #141414 inset;
 }
@@ -1811,7 +1807,9 @@ select:hover {
   flex: 1 0 auto;
   gap: 1em;
 }
-.blogtube_post_card p, .blogtube_post_card span, .blogtube_post_card div {
+.blogtube_post_card p,
+.blogtube_post_card span,
+.blogtube_post_card div {
   color: var(--blogtube_font_color);
   font-size: 1.2rem;
 }
@@ -1862,6 +1860,9 @@ select:hover {
   line-height: 1.8rem;
 }
 
+.home .widget {
+  font-size: 1.4rem;
+}
 .home .blogtube_sticky_post {
   background-color: var(--blogtube_primary_variant_darker);
   border-radius: 2em;
@@ -1869,6 +1870,49 @@ select:hover {
 }
 .home .blogtube_sticky_post h2 {
   color: var(--blogtube_primary_color);
+}
+.home .blogtube_chipmenu {
+  display: flex;
+  padding: 0;
+  gap: 0.5em;
+  padding: 0.5em;
+  overflow-x: auto;
+  max-width: 100em;
+  flex-wrap: wrap;
+  scrollbar-width: none;
+}
+@media only screen and (max-width: 800px) {
+  .home .blogtube_chipmenu {
+    flex-wrap: nowrap;
+  }
+}
+.home .blogtube_chipmenu::-webkit-scrollbar {
+  display: none;
+}
+.home .blogtube_chipmenu li {
+  height: 32px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1019607843);
+  display: flex;
+  align-items: stretch;
+  transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
+}
+.home .blogtube_chipmenu li a {
+  color: var(--blogtube_font_color);
+  min-width: 12px;
+  text-decoration: none;
+  padding: 0 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 1.4rem;
+}
+.home .blogtube_chipmenu li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.home .blogtube_chipmenu li ul {
+  display: none;
 }
 
 .post-password-form {

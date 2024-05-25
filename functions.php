@@ -9,7 +9,7 @@ function blogtube_styles()
     );
 
     foreach ($styles as $handle => $file) {
-        wp_enqueue_style($handle, $theme_directory . $file, array(), '1', 'all');
+        wp_enqueue_style($handle, $theme_directory . $file, array(), '1.1', 'all');
     }
 }
 add_action('wp_enqueue_scripts', 'blogtube_styles');
@@ -41,9 +41,9 @@ function blogtube_enqueue_scripts()
     wp_enqueue_script('blogtube_sidemenu_script', get_template_directory_uri() . '/js/blogtube_sidemenu.js', null, '1.0', true);
 
     // Infinitiyscroll Script
-    if(is_home() & have_posts()|| is_search() & have_posts() || is_archive() & have_posts() ){
+    if (is_home() & have_posts() || is_search() & have_posts() || is_archive() & have_posts()) {
         wp_enqueue_script('blogtube_infinityscroll_script', get_template_directory_uri() . '/js/blogtube_infinityscroll.js', null, '1.0', true);
-       
+
         // Pass the Ajax URL to script.js
         wp_localize_script('blogtube_infinityscroll_script', 'my_scripts_vars', array(
             'ajaxurl' => admin_url('admin-ajax.php')
@@ -71,13 +71,14 @@ function blogtube_register_menus()
     register_nav_menus(
         array(
             'sidemenu' => __('Sidemenu', 'blogtube'),
-            'legal links' => __('legal links', 'blogtube'),
+            'legal links' => __('Legal links', 'blogtube'),
+            'chipmenu' => __('Chips above the feed', 'blogtube'),
         )
     );
 }
 add_action('init', 'blogtube_register_menus');
 
-function blogtube_register_sidebar()
+function blogtube_register_sidebars()
 {
     register_sidebar(array(
         'name' => __('Sidebar', 'blogtube'),
@@ -87,8 +88,16 @@ function blogtube_register_sidebar()
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
+    register_sidebar(array(
+        'name' => __('Widget area above feed', 'blogtube'),
+        'id' => 'home-widget-area',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 }
-add_action('widgets_init', 'blogtube_register_sidebar');
+add_action('widgets_init', 'blogtube_register_sidebars');
 
 // Custom menu structure
 class blogtube_menu_walker extends Walker_Nav_Menu

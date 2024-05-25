@@ -2,6 +2,7 @@
 
 .widget {
     padding: 1em;
+    text-wrap: pretty;
 
     p {
         overflow-wrap: anywhere;
@@ -19,6 +20,12 @@
 
     img {
         height: auto;
+    }
+}
+
+.widget_text {
+    p {
+        margin: 0;
     }
 }
 
@@ -50,13 +57,13 @@
             color: var(--blogtube_primary_color)
         }
     }
-    
+
     .tag-link-count {
         color: var(--blogtube_font_color);
     }
 }
 
-.wp-block-post-navigation-link a{
+.wp-block-post-navigation-link a {
     @include color_button;
     margin: 0.5em 0;
 }
@@ -112,7 +119,7 @@
     tbody {
         background-color: #1a1a1b;
     }
-    
+
     table thead tr {
         background-color: transparent;
         text-align: left;
@@ -127,7 +134,7 @@
             border-radius: 0 12px 0 0;
         }
     }
-    
+
     th,
     td {
         padding: 0.8em 0.8em;
@@ -135,7 +142,7 @@
         color: var(--blogtube_font_color);
     }
 
-    tfoot td{
+    tfoot td {
         border-top: 1px solid var(--blogtube_primary_color);
     }
 
@@ -147,7 +154,7 @@
 
     tr {
         transition: all 200ms;
-        
+
         &:hover {
             background-color: rgb(54, 54, 58);
         }
@@ -264,7 +271,8 @@ blockquote {
     justify-content: center;
     margin: 0.5em 0;
 
-    a, input[type="submit"] {
+    a,
+    input[type="submit"] {
         @include color_button;
         border: none;
     }
@@ -434,7 +442,7 @@ blockquote {
     border: none;
 
     &:hover {
-        background-color: rgba(255,255,255,0.2);
+        background-color: rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -511,5 +519,5 @@ blockquote {
 
 .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
     background-color: black;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, .15);
 }
