@@ -22,6 +22,9 @@ This theme is designed for blogs. BlogTube is a theme inspired by a well-known v
 
 == Changelog ==
 
+    = 1.2.0 =
+        - removed theme author website link
+
     = 1.1.0 =
         - chipmenu above the feed
         - home widget area
